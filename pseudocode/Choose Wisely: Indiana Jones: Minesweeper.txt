@@ -1,0 +1,31 @@
+Choose Wisely: Indiana Jones: Minesweeper
+
+s1) Define required constants
+	1.1 Define the squares that are booby trapped.
+	
+	
+
+2) Define required variables used to track the state of the game
+	2.1) Board array 9 row and 9 columns.
+	2.2) location of the booby trap
+	2.3) proximity markers to the booby trap/
+	
+
+3) Store elements on the page that will be accessed in code more than once in variables to make code more concise, readable and performant.
+	3.1) 
+
+4) Upon loading the app should:
+
+  4.1) Initialize the state variables: 
+	4.1.1 Generate a board with booby trap squares.
+	4.1.2 Generate a board with squares hiding the booby trap. 
+
+  4.2) Render those values to the page
+	
+  4.3) Wait for the user to click a square
+
+5) Handle a player clicking a square
+	5.1) When a player clicks on a square that square and all the squares touching that square will reveal what is hidden below. It will either be a booby trap (player loses) or squares revealing how close to a booby trap the player is. 
+	
+
+6) Handle a player clicking the replay button
