@@ -6,19 +6,24 @@ s1) Define required constants
 	
 
 2) Define required variables used to track the state of the game
-	2.1) Board array 9 row and 9 columns.
-	2.2) location of the booby trap
-	2.3) proximity markers to the booby trap/
+	2.1) location of the booby trap
+	2.2) proximity markers to the booby trap
+    2.3) Click function for choosing squares
+    2.4) Click function for starting the game over 
 	
 
 3) Store elements on the page that will be accessed in code more than once in variables to make code more concise, readable and performant.
-	3.1) 
+    3.1) Board array
+    3.2) player scored
+
 
 4) Upon loading the app should:
 
   4.1) Initialize the state variables: 
 	4.1.1 Generate a board with booby trap squares.
 	4.1.2 Generate a board with squares hiding the booby trap. 
+    4.1.3 Generate the proximity numbers 
+        4.1.3.1 Proximity appears from under initial board. They tell the player how close they are to a booby trap
 
   4.2) Render those values to the page
 	
@@ -29,3 +34,18 @@ s1) Define required constants
 	
 
 6) Handle a player clicking the replay button
+  6.1 if player clears all the non booby trap spaces or if the player lands on a booby trap reveal the reset
+  6.2 reset renders the baord back to it's original state. 
+
+7) design look
+    7.1 inspired by Indiana Jones and the Last Crusade. 
+
+Development Department 
+
+-Sounds
+    -theme song
+    -You chose Wisely
+    -Whilhelm Scream
+
+-Various images from the movie. 
+-Evil nazi monkey when you hit a trap (techinically this is from Raiders but we all want to see an evil monkey.)
