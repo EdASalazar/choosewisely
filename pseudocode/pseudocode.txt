@@ -14,7 +14,7 @@ s1) Define required constants
 
 3) Store elements on the page that will be accessed in code more than once in variables to make code more concise, readable and performant.
     3.1) Board array
-    3.2) player scored
+    3.2) player score
 
 
 4) Upon loading the app should:
@@ -40,7 +40,7 @@ s1) Define required constants
 7) design look
     7.1 inspired by Indiana Jones and the Last Crusade. 
 
-Development Department
+Development Department:
 Icebox 
 
 -Sounds
@@ -51,3 +51,5 @@ Icebox
 -Various images from the movie. 
 -Evil nazi monkey when you hit a trap (techinically this is from Raiders but we all want to see an evil monkey.)
 -Level of difficulty
+-Size of board
+-Choose other characters to play as
