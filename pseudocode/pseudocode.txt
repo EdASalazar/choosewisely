@@ -53,3 +53,7 @@ Icebox
 -Level of difficulty
 -Size of board
 -Choose other characters to play as
+-high score
+-timer
+-high score with name
+-fastets time 
