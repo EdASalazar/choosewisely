@@ -10,10 +10,11 @@
 </head>
 
 <body>
-  
- <main>
   <header>Choose Wisely</header>
   <h1>An Idiana Jones Puzzle</h1>
+ <main>
+    <section id="left-section"></section>
+
   <section id="board">
     <div id="0"></div>
     <div id="1"></div>
@@ -108,7 +109,7 @@
 
 
   </section>
-
+  <section id="right-section"></section>
   <button>GIVE UP</button>
 </main>
 </body>
