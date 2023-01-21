@@ -1,11 +1,12 @@
   /*----- constants -----*/
   //AUDIO GOES HERE
 
-  const COLOR =  {
-      'null': 'darkgrey',     //will be an image
-     '-1': 'red', //will be an image
-     '1': 'black' //will be an image
-  }
+const COLOR =  {
+  'null': 'darkgrey',     //will be an image
+   '0': 'black', //this will be the same as null's value to hide it. 
+    '-1': 'red', //will be an image
+    '1': 'black' //will be an image
+}
   
   const PLAYERS = {
     'player': -1,
@@ -75,7 +76,7 @@ function makeTraps() {
     trapCol = (Math.floor(Math.random() * 10));
     trapRow = (Math.floor(Math.random() * 10));
     trapLocs = board[trapCol][trapRow];
-     board[trapCol][trapRow] = 1;
+     board[trapCol][trapRow] = 0;  
      console.log(trapCol);
      console.log(trapRow);
     //  console.log(trapLoc);
