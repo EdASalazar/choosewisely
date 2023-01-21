@@ -1,9 +1,9 @@
   /*----- constants -----*/
   //AUDIO GOES HERE
 
-  const COLORS =  {
+  const COLOR =  {
       '0': 'darkgrey',     //will be an image
-     '-1': 'lightgrey', //will be an image
+     '-1': 'red', //will be an image
      '1': 'black' //will be an image
   }
 
@@ -62,18 +62,18 @@ playAgainBtn.addEventListener('click', init);
     board[colIdx][rowIdx] = -1;
     score = +1;
     turns = +1;
-    floodSquares();
+    // floodSquares();
 
-    console.log(evt.target.id);
-    console.log(colIdx);
-    console.log(rowIdx);
+    // console.log(evt.target.id);
+    // console.log(colIdx);
+    // console.log(rowIdx);
     render();
 
   }
 
   function render () {
     renderBoard();
-    renderMessage();
+    // renderMessage();
   }
 
 function renderBoard() {
@@ -81,7 +81,9 @@ function renderBoard() {
         colArr.forEach(function(cellVal, rowIdx){
             const cellId = `c${colIdx}r${rowIdx}`;
             const cellEl = document.getElementById(cellId);
-            cellEl.style.backgroundColor = COLOR[cellVal];
+            // cellEl.style.backgroundColor = COLOR[cellVal];
+            // console.log(cellId);
+            console.log(cellVal);
         });
     });
 }
