@@ -2,13 +2,13 @@
   //AUDIO GOES HERE
 
   const COLOR =  {
-      '0': 'darkgrey',     //will be an image
+      'null': 'darkgrey',     //will be an image
      '-1': 'red', //will be an image
      '1': 'black' //will be an image
   }
 
   const numTraps = {
-    'num': 2, //may move this to a place where it can be changed eventually, difficult
+    'num': 3, //may move this to a place where it can be changed eventually, difficult
   }
 
 
@@ -25,12 +25,12 @@
 
   /*----- cached elements  -----*/
 const markerEls = [...document.querySelectorAll('#board > div')];
-const playAgainBtn = document.querySelector('button');
+const playAgainBtn = document.querySelector("button");
 
 
   /*----- event listeners -----*/
 document.getElementById('board').addEventListener('click', handleChoice);
-playAgainBtn.addEventListener('click', init);
+playAgainBtn.addEventListener("click", init);
 
   /*----- functions -----*/
   init();
@@ -53,8 +53,10 @@ playAgainBtn.addEventListener('click', init);
         
     ];
 
+    score = 0;
     turns = 0;
-    // render();
+    render();
+    // playAgainBtn.style.visibility = "hidden";
 
   }
 
@@ -82,7 +84,7 @@ function handleChoice(evt) {
     render();
  }
 
-function render () {
+function render() {
     renderBoard();
     // renderMessage();
  }
