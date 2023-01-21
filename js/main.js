@@ -1,15 +1,16 @@
   /*----- constants -----*/
   //AUDIO GOES HERE
 
-  const TILES =  {
-      'rune': 'darkgrey',     //will be an image
-     'floor': 'lightgrey', //will be an image
-     'trap': 'black' //will be an image
+  const COLORS =  {
+      '0': 'darkgrey',     //will be an image
+     '-1': 'lightgrey', //will be an image
+     '1': 'black' //will be an image
   }
 
 
 
   /*----- state variables -----*/
+  let board;
   let scores; //number of squares revealed.
   let reuslts; //no squares left accept for the traps. 
   let traps; //location of the traps. 
@@ -22,10 +23,11 @@
 
   /*----- cached elements  -----*/
 const markerEls = [...document.querySelectorAll('#board > div')];
+const playAgainBtn = document.querySelector('button');
 
   /*----- event listeners -----*/
 document.getElementById('board').addEventListener('click', handleChoice);
-//reset button
+playAgainBtn.addEventListener('click', init);
 
   /*----- functions -----*/
   init();
@@ -54,7 +56,28 @@ document.getElementById('board').addEventListener('click', handleChoice);
   function handleChoice(evt) {
     const colIdx = markerEls.indexOf(evt.target);
     if (colIdx === -1) return;  //guard 
-    const colArr = board[colIdx];
-    
+    // const colArr = board[colIdx];
+    console.log(colIdx);
+    render();
 
   }
+
+  function render () {
+    renderBoard();
+    renderMessage();
+
+  }
+
+function renderBoard() {
+    board.forEach(function(colArr, colIdx) {
+        colArr.forEach(function(cellVal, rowIdx){
+            const cellId = `c${colIdx}r${rowIdx}`;
+            const cellEl = document.getElementById(cellId);
+            cellEl.style.backgroundColor = COLOR[cellVal];
+        });
+    });
+}
+
+function renderMessage() {
+
+};
