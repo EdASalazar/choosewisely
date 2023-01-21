@@ -25,6 +25,7 @@ const COLOR =  {
   let trapLocs; //location of the traps. 
   let turns;
   let winner;
+  let squareClkd;
 //   let timeElapse; icebox for now //how fast they win
   
 
@@ -83,11 +84,11 @@ function makeTraps() {
 }
 function checkWinner() {
   
-  const hasNull = board.some((num) => num === null) 
-  if (hasNull === false) {
-        winner = -1;
-  } 
-  console.log(hasNull);
+  // const hasNull = board.some((num) => num === null) 
+  // if (hasNull === false) {
+  //       winner = -1;
+  // } 
+  // console.log(hasNull);
 };
 
 // if(board.includes(null)){
@@ -99,18 +100,20 @@ function checkWinner() {
 function handleChoice(evt) {
   const colIdx = evt.target.id.slice(1, 2);
   const rowIdx = evt.target.id.slice(3, 4);
-  const  squareClkd = board[colIdx][rowIdx];
+  squareClkd = `board[${colIdx}][${rowIdx}]`;
       
 if (colIdx === -1) return;  //guard
-if (squareClkd === 0) {
+if (board[colIdx][rowIdx] === 0) {
      winner = 1;
-     board[colIdx][rowIdx] = 1;
+     squareClkd = 1;
     
     } else {
       board[colIdx][rowIdx] = -1;
       score = +1;
       turns = +1;
-    
+
+    console.log(squareClkd);
+    console.log(winner);
     checkWinner();
     render();
   }
