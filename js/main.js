@@ -7,6 +7,9 @@
      '1': 'black' //will be an image
   }
 
+  const numTraps = {
+    'num': 2, //may move this to a place where it can be changed eventually, difficult
+  }
 
 
   /*----- state variables -----*/
@@ -23,6 +26,7 @@
   /*----- cached elements  -----*/
 const markerEls = [...document.querySelectorAll('#board > div')];
 const playAgainBtn = document.querySelector('button');
+
 
   /*----- event listeners -----*/
 document.getElementById('board').addEventListener('click', handleChoice);
@@ -54,9 +58,11 @@ playAgainBtn.addEventListener('click', init);
 
   }
 
-  function handleChoice(evt) {
-      const colIdx = evt.target.id.slice(1, 2);
-      const rowIdx = evt.target.id.slice(3, 4);
+
+
+function handleChoice(evt) {
+    const colIdx = evt.target.id.slice(1, 2);
+    const rowIdx = evt.target.id.slice(3, 4);
       
     if (colIdx === -1) return;  //guard 
     board[colIdx][rowIdx] = -1;
@@ -68,13 +74,12 @@ playAgainBtn.addEventListener('click', init);
     // console.log(colIdx);
     // console.log(rowIdx);
     render();
+ }
 
-  }
-
-  function render () {
+function render () {
     renderBoard();
     // renderMessage();
-  }
+ }
 
 function renderBoard() {
     board.forEach(function(colArr, colIdx) {
@@ -82,8 +87,6 @@ function renderBoard() {
             const cellId = `c${colIdx}r${rowIdx}`;
             const cellEl = document.getElementById(cellId);
             cellEl.style.backgroundColor = COLOR[cellVal];
-            // console.log(cellId);
-            console.log(cellVal);
         });
     });
 }
