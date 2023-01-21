@@ -16,7 +16,7 @@
   let board;
   let score; //number of squares revealed.
   let reuslts; //no squares left accept for the traps. 
-  let traps; //location of the traps. 
+  let traps =[]; //location of the traps. 
   let turns;
 //   let timeElapse; icebox for now //how fast they win
   
@@ -58,7 +58,13 @@ playAgainBtn.addEventListener('click', init);
 
   }
 
+// function makeTraps() {
+    //while traps.length < numTraps.num
+    //generate two numbers 
+    //board[x][y]
+    //if statement to prevent them from being the same.
 
+// }
 
 function handleChoice(evt) {
     const colIdx = evt.target.id.slice(1, 2);

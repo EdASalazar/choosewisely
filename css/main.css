@@ -28,8 +28,7 @@
   #board {
       display: grid;
       grid-template-columns: repeat(10, 1fr);
-      
-
+      background-color: black;
   }
 
   #board > div {
