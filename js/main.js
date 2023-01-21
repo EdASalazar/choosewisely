@@ -83,19 +83,14 @@ function makeTraps() {
 
 }
 function checkWinner() {
+
   
-  // const hasNull = board.some((num) => num === null) 
-  // if (hasNull === false) {
-  //       winner = -1;
-  // } 
-  // console.log(hasNull);
-};
 
 // if(board.includes(null)){
   //   render();
   // } else {
   //   winner = -1;
-  // }
+  }
 
 function handleChoice(evt) {
   const colIdx = evt.target.id.slice(1, 2);
