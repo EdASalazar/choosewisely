@@ -2,56 +2,40 @@
     box-sizing: border-box;
   }
   
+
+
+
   body {
-  /*   viewport units: 100vh () */
     height: 100vh;
     margin: 0;
     font-family: 'Open Sans', sans-serif;
-    display: grid;
-    grid-template-columns: 1fr 3fr 1fr ;
-    grid-template-rows: 1fr
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: tan;
+    color: orange;
+    text-shadow: #000 0px 0px 2px;
    
-  }
+}
   
+
   header {
-    font-size: 4vmin;
-    color: darkgray;
-    letter-spacing: 1vmin;
+ 
+
   }
 
-  h1 {
-    color: darkgray;
-    font-size: 3vmin;
-    
-  }
   #board {
-    display: grid;
-    grid-template-columns: repeat(9, 4vmin);
-    grid-template-rows: repeat(9, 4vmin);
-    gap: 1vmin;
-    margin-top: 1vmin;
-    top: 5vmin;
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      
+
   }
+
   #board > div {
-    border-radius: 15%;
-    border: .5vmin solid lightgray;
-    gap: 0;
-    background-color: gray;
-  
-  }
-  
-  
-  
-  button {
-    margin-top: 4vmin;
-    padding: 2vmin;
-    font-size: 2vmin;
-    border-radius: 4vmin;
-    border: .1vmin solid gray;
-    color: gray;
-  }
-  
-  button:hover {
-    color: white;
-    background-color: darkgray;
+    height: 50px;
+    width: 50px;
+    background-color: #8796A9;
+    border: 1px solid black;
+    border-radius: 10%;
   }
