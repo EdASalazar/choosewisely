@@ -3,7 +3,7 @@
 
 const COLOR =  {
   'null': 'darkgrey',     //will be an image
-   '0': 'black', //this will be the same as null's value to hide it. 
+   '0': 'blue', //this will be the same as null's value to hide it. 
     '-1': 'red', //will be an image
     '1': 'black' //will be an image
 }
@@ -89,7 +89,7 @@ function handleChoice(evt) {
     const rowIdx = evt.target.id.slice(3, 4);
       
   if (colIdx === -1) return;  //guard
-  if (board[colIdx][rowIdx] === 1) {
+  if (board[colIdx][rowIdx] === 0) {
       winner = 1;
       clickLoc = 1;
   } else {
