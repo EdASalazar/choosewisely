@@ -52,6 +52,9 @@ document.getElementById('board').addEventListener('click', handleChoice);
   }
 
   function handleChoice(evt) {
-    const colIdx = 
+    const colIdx = markerEls.indexOf(evt.target);
+    if (colIdx === -1) return;  //guard 
+    const colArr = board[colIdx];
+    
 
   }
