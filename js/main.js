@@ -11,10 +11,9 @@
 
   /*----- state variables -----*/
   let board;
-  let scores; //number of squares revealed.
+  let score; //number of squares revealed.
   let reuslts; //no squares left accept for the traps. 
   let traps; //location of the traps. 
-  let floodSquares; //spaces that are touch the trap 
   let turns;
 //   let timeElapse; icebox for now //how fast they win
   
@@ -61,29 +60,31 @@ playAgainBtn.addEventListener('click', init);
       
     if (colIdx === -1) return;  //guard 
     board[colIdx][rowIdx] = -1;
+    score = +1;
+    turns = +1;
+    floodSquares();
 
     console.log(evt.target.id);
     console.log(colIdx);
     console.log(rowIdx);
-    // render();
+    render();
 
   }
 
-//   function render () {
-//     renderBoard();
-//     renderMessage();
+  function render () {
+    renderBoard();
+    renderMessage();
+  }
 
-//   }
-
-// function renderBoard() {
-//     board.forEach(function(colArr, colIdx) {
-//         colArr.forEach(function(cellVal, rowIdx){
-//             const cellId = `c${colIdx}r${rowIdx}`;
-//             const cellEl = document.getElementById(cellId);
-//             cellEl.style.backgroundColor = COLOR[cellVal];
-//         });
-//     });
-// }
+function renderBoard() {
+    board.forEach(function(colArr, colIdx) {
+        colArr.forEach(function(cellVal, rowIdx){
+            const cellId = `c${colIdx}r${rowIdx}`;
+            const cellEl = document.getElementById(cellId);
+            cellEl.style.backgroundColor = COLOR[cellVal];
+        });
+    });
+}
 
 // function renderMessage() {
 
