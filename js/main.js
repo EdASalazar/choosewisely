@@ -87,14 +87,11 @@ function handleChoice(evt) {
     const colIdx = evt.target.id.slice(1, 2);
     const rowIdx = evt.target.id.slice(3, 4);
       
-    if (colIdx === -1) return;  //guard
-
-    let clickLoc =  board[colIdx][rowIdx];
-    if (clickLoc === trapLocs) {
+  if (colIdx === -1) return;  //guard
+  if (board[colIdx][rowIdx] === 1) {
       winner = 1;
       clickLoc = 1;
-
-    } else {
+  } else {
     board[colIdx][rowIdx] = -1;
     score = +1;
     turns = +1;
