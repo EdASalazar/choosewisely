@@ -24,6 +24,7 @@ const COLOR =  {
   let reuslts; //no squares left accept for the traps. 
   let trapLocs; //location of the traps. 
   let turns;
+  let winner;
 //   let timeElapse; icebox for now //how fast they win
   
 
@@ -61,7 +62,7 @@ playAgainBtn.addEventListener("click", init);
 
     score = 0;
     turns = 0;
-    winner = 0;
+    winner = null;
 
     makeTraps();
     render();
@@ -70,42 +71,46 @@ playAgainBtn.addEventListener("click", init);
   }
 
 function makeTraps() {
-    //while traps.length < numTraps.num
-    //generate two numbers 
-    //board[x][y]
-    //if statement to prevent them from being the same.
     trapCol = (Math.floor(Math.random() * 10));
     trapRow = (Math.floor(Math.random() * 10));
     trapLocs = board[trapCol][trapRow];
      board[trapCol][trapRow] = 0;  
-     console.log(trapCol);
-     console.log(trapRow);
+    //  console.log(trapCol);
+    //  console.log(trapRow);
     //  console.log(trapLoc);
      
 
 }
 function checkWinner() {
-  if(board.includes(null)){
-    render();
-  } else {
-    winner = -1;
-  }
+  
+  const hasNull = board.some((num) => num === null) 
+  if (hasNull === false) {
+        winner = -1;
+  } 
+  console.log(hasNull);
 };
+
+// if(board.includes(null)){
+  //   render();
+  // } else {
+  //   winner = -1;
+  // }
 
 function handleChoice(evt) {
   const colIdx = evt.target.id.slice(1, 2);
   const rowIdx = evt.target.id.slice(3, 4);
+  const  squareClkd = board[colIdx][rowIdx];
       
 if (colIdx === -1) return;  //guard
-if (board[colIdx][rowIdx] === 0) {
+if (squareClkd === 0) {
      winner = 1;
-    clickLoc = 1;
+     board[colIdx][rowIdx] = 1;
     
     } else {
       board[colIdx][rowIdx] = -1;
       score = +1;
       turns = +1;
-
+    
     checkWinner();
     render();
   }
@@ -113,7 +118,7 @@ if (board[colIdx][rowIdx] === 0) {
 
 function render() {
   renderBoard();
-  // renderMessage();
+  renderMessage();
  }
 
 function renderBoard() {
@@ -126,5 +131,12 @@ function renderBoard() {
     });
   }
 function renderMessage() {
+  if (winner === 1) {
+    messageEl.innerText = "You chose poorly!!!";
+  } else if (winner === -1) {
+    messageEl.innerText = "You chose wisely!!!";
+  } else {
+    messageEl.innerText = "Choose again!!!";
+  }
 
 };
