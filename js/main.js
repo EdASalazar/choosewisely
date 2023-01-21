@@ -83,32 +83,36 @@ function makeTraps() {
      
 
 }
+function checkWinner() {
+  if(board.contains(null)){
+    render();
+  } else {
+    winner = -1;
+  }
+};
 
 function handleChoice(evt) {
-    const colIdx = evt.target.id.slice(1, 2);
-    const rowIdx = evt.target.id.slice(3, 4);
+  const colIdx = evt.target.id.slice(1, 2);
+  const rowIdx = evt.target.id.slice(3, 4);
       
-  if (colIdx === -1) return;  //guard
-  if (board[colIdx][rowIdx] === 0) {
-      winner = 1;
-      clickLoc = 1;
-  } else {
-    board[colIdx][rowIdx] = -1;
-    score = +1;
-    turns = +1;
+if (colIdx === -1) return;  //guard
+if (board[colIdx][rowIdx] === 0) {
+     winner = 1;
+    clickLoc = 1;
+    
+    } else {
+      board[colIdx][rowIdx] = -1;
+      score = +1;
+      turns = +1;
 
-    // floodSquares();
-
-    // console.log(evt.target.id);
-    // console.log(colIdx);
-    // console.log(rowIdx);
+    checkWinner();
     render();
-    }
- }
+  }
+}
 
 function render() {
-    renderBoard();
-    // renderMessage();
+  renderBoard();
+  // renderMessage();
  }
 
 function renderBoard() {
