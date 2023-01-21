@@ -49,35 +49,40 @@ playAgainBtn.addEventListener('click', init);
     ];
 
     turns = 0;
-    render();
+    // render();
 
   }
 
   function handleChoice(evt) {
-    const colIdx = markerEls.indexOf(evt.target);
+      const colIdx = evt.target.id.slice(1, 2);
+      const rowIdx = evt.target.id.slice(3, 4);
+      
     if (colIdx === -1) return;  //guard 
-    // const colArr = board[colIdx];
+    // board[colIdx][rowIdx] = -1;
+
+    console.log(evt.target.id);
     console.log(colIdx);
-    render();
+    console.log(rowIdx);
+    // render();
 
   }
 
-  function render () {
-    renderBoard();
-    renderMessage();
+//   function render () {
+//     renderBoard();
+//     renderMessage();
 
-  }
+//   }
 
-function renderBoard() {
-    board.forEach(function(colArr, colIdx) {
-        colArr.forEach(function(cellVal, rowIdx){
-            const cellId = `c${colIdx}r${rowIdx}`;
-            const cellEl = document.getElementById(cellId);
-            cellEl.style.backgroundColor = COLOR[cellVal];
-        });
-    });
-}
+// function renderBoard() {
+//     board.forEach(function(colArr, colIdx) {
+//         colArr.forEach(function(cellVal, rowIdx){
+//             const cellId = `c${colIdx}r${rowIdx}`;
+//             const cellEl = document.getElementById(cellId);
+//             cellEl.style.backgroundColor = COLOR[cellVal];
+//         });
+//     });
+// }
 
-function renderMessage() {
+// function renderMessage() {
 
-};
+// };
