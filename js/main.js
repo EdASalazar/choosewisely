@@ -13,9 +13,9 @@ const COLOR =  {
     'computer': 1,
 }
 
-  const numTraps = {
-    'num': 3, //may move this to a place where it can be changed eventually, difficult
-  }
+  // const numTraps = {
+  //   'num': 3, //may move this to a place where it can be changed eventually, difficult
+  // }
 
 
   /*----- state variables -----*/
@@ -32,6 +32,7 @@ const COLOR =  {
   /*----- cached elements  -----*/
 const markerEls = [...document.querySelectorAll('#board > div')];
 const playAgainBtn = document.querySelector("button");
+const messageEl = document.querySelector("h1");
 
   /*----- event listeners -----*/
 document.getElementById('board').addEventListener('click', handleChoice);
@@ -84,7 +85,7 @@ function makeTraps() {
 
 }
 function checkWinner() {
-  if(board.contains(null)){
+  if(board.includes(null)){
     render();
   } else {
     winner = -1;
@@ -124,3 +125,6 @@ function renderBoard() {
         });
     });
   }
+function renderMessage() {
+
+};
