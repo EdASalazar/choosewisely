@@ -14,16 +14,17 @@
   let reuslts; //no squares left accept for the traps. 
   let traps; //location of the traps. 
   let floodSquares; //spaces that are touch the trap 
+  let turns;
 //   let timeElapse; icebox for now //how fast they win
   
 
 
 
   /*----- cached elements  -----*/
-
+const markerEls = [...document.querySelectorAll('#board > div')];
 
   /*----- event listeners -----*/
-//click for player move
+document.getElementById('board').addEventListener('click', handleChoice);
 //reset button
 
   /*----- functions -----*/
@@ -44,5 +45,13 @@
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     ];
+
+    turns = 0;
+    render();
+
+  }
+
+  function handleChoice(evt) {
+    const colIdx = 
 
   }
