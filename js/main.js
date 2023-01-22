@@ -6,12 +6,24 @@ const BOARD_COLS = 8;
 
 /*----- app's state (variables) -----*/
 let game;
+let baord;
 
 /*----- cached element references -----*/
 const boardEl = document.getElementById('board');
 const msgEl = document.getElementById('message');
 
 /*----- classes -----*/
+class ChooseWiselyGame {
+  constructor(boardElement) {
+    this.boardElement = boardElement;
+  }
+}
+
+class Square {
+  constructor(domElement) {
+    this.domElement = domElement;
+    this.value = null;
+  }
 
 /*----- functions -----*/
 init();
@@ -39,5 +51,6 @@ function init() {
 initialize();
 
 function initialize() {
-
+  game = new ChooseWiselyGame(boardEl);
+  
 }
