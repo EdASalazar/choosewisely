@@ -7,9 +7,9 @@ body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
   display: flex;
+  flex-direction: column;
   justify-self: center;
   align-items: center;
-  flex-direction: column;
   background-color: tan;
   color: orange;
   text-shadow: #000 0px 0px 2px;
@@ -23,7 +23,7 @@ header {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   background-color: black;
-}
+  border-radius: 1vmin;
 
 #board > div {
   height: 8vh;
