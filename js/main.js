@@ -18,6 +18,16 @@ class ChooseWiselyGame {
     this.boardElement = boardElement;
     this.messageElement = messageElement;
     this.squareEls = [...boardElement.querySelectorAll('div')];
+
+  }
+  play() {
+    this.turn = 1; //may not be necessary
+    this.winner = null;
+    // this.squares = ???;
+    this.render();
+  }
+  render() {
+    console.log("Render Game..");
   }
 }
 
@@ -28,6 +38,8 @@ class ChooseWiselyGame {
 //   }
 
 /*----- functions -----*/
+ 
+
 // init();
 
 // function init() {
