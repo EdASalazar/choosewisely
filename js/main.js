@@ -14,7 +14,6 @@ const msgEl = document.getElementById('message');
 /*----- classes -----*/
 
 /*----- functions -----*/
-
 init();
 
 function init() {
@@ -29,15 +28,12 @@ function init() {
         adjMineCount: null,  // Compute after mines are determined
         rowIdx,
         colIdx
-        board[rowIdx].push({
-          isMine: Math.random() < (MINE_PCT / 100),
-          isRevealed: false,
       });
     }
   }
   // TODO: Iterate over cells to plant mines
-  /
-
+  // TODO: Iterate over cells to compute adjMineCount
+}
 
 
 initialize();
