@@ -17,7 +17,7 @@ class ChooseWiselyGame {
   constructor(boardElement, messageElement) {
     this.boardElement = boardElement;
     this.messageElement = messageElement;
-    this.squareEls = boardElement.querySelectorAll('div');
+    this.squareEls = [...boardElement.querySelectorAll('div')];
   }
 }
 
