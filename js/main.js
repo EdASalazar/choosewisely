@@ -6,7 +6,7 @@ const BOARD_COLS = 8;
 
 /*----- app's state (variables) -----*/
 let game;
-let baord;
+let board;
 
 /*----- cached element references -----*/
 const boardEl = document.getElementById('board');
@@ -29,6 +29,11 @@ class ChooseWiselyGame {
   render() {
     console.log("Render Game..");
   }
+
+  toString() {
+    return `Tic Tac Toe / winner is  - > ${this.winner}`;
+  }
+
 }
 
 // class Square {
@@ -66,6 +71,6 @@ initialize();
 
 function initialize() {
   game = new ChooseWiselyGame(boardEl, msgEl);
-
+  game.play();
 
 }
