@@ -27,7 +27,7 @@ function init() {
         isFlagged: false,
         adjMineCount: null,  // Compute after mines are determined
         rowIdx,
-        colIdx
+        colIdx,
       });
     }
   }
