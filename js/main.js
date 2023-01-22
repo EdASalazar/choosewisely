@@ -1,140 +1,142 @@
-  /*----- constants -----*/
-  //AUDIO GOES HERE
+<!DOCTYPE html>
+<html>
 
-const COLOR =  {
-  'null': 'darkgrey',     //will be an image
-   '0': 'blue', //this will be the same as null's value to hide it. 
-    '-1': 'red', //will be an image
-    '1': 'black' //will be an image
-}
-  
-  const PLAYERS = {
-    'player': -1,
-    'computer': 1,
-}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Choose Wisely!</title>
+  <link  href="css/main.css" rel="stylesheet" type="text/css">
+  <script defer src="js/main.js"></script>
+</head>
 
-  // const numTraps = {
-  //   'num': 3, //may move this to a place where it can be changed eventually, difficult
-  // }
-
-
-  /*----- state variables -----*/
-  let board;
-  let score; //number of squares revealed.
-  let reuslts; //no squares left accept for the traps. 
-  let trapLocs; //location of the traps. 
-  let turns;
-  let winner;
-  let squareClkd;
-//   let timeElapse; icebox for now //how fast they win
-  
-
-
-
-  /*----- cached elements  -----*/
-const markerEls = [...document.querySelectorAll('#board > div')];
-const playAgainBtn = document.querySelector("button");
-const messageEl = document.querySelector("h1");
-
-  /*----- event listeners -----*/
-document.getElementById('board').addEventListener('click', handleChoice);
-playAgainBtn.addEventListener("click", init);
-
-  /*----- functions -----*/
-  init();
-
-  //intialize 
-
-  function init() {
-
-    board = [
-        [null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, null, null]
-        
-    ];
-
-    score = 0;
-    turns = 0;
-    winner = null;
-
-    makeTraps();
-    render();
-    // playAgainBtn.style.visibility = "hidden";
-
-  }
-
-function makeTraps() {
-    trapCol = (Math.floor(Math.random() * 10));
-    trapRow = (Math.floor(Math.random() * 10));
-    trapLocs = board[trapCol][trapRow];
-     board[trapCol][trapRow] = 0;  
-    //  console.log(trapCol);
-    //  console.log(trapRow);
-    //  console.log(trapLoc);
-     
-
-}
-function checkWinner() {
 
   
-
-// if(board.includes(null)){
-  //   render();
-  // } else {
-  //   winner = -1;
-  }
-
-function handleChoice(evt) {
-  const colIdx = evt.target.id.slice(1, 2);
-  const rowIdx = evt.target.id.slice(3, 4);
-  squareClkd = `board[${colIdx}][${rowIdx}]`;
-      
-if (colIdx === -1) return;  //guard
-if (board[colIdx][rowIdx] === 0) {
-     winner = 1;
-     squareClkd = 1;
+ <body>
+  <header>Choose Wisely</header>
+  <h1>An Idiana Jones Puzzle</h1>
+  <section><h1>score</h1></section>
+  <section id="board">
+  
+  
+    <div id="c0r0" class="tiles"></div>
+    <div id="c1r0" class="tiles"></div>
+    <div id="c2r0" class="tiles"></div>
+    <div id="c3r0" class="tiles"></div>
+    <div id="c4r0" class="tiles"></div>
+    <div id="c5r0" class="tiles"></div>
+    <div id="c6r0" class="tiles"></div>
+    <div id="c7r0" class="tiles"></div>
+    <div id="c8r0" class="tiles"></div>
+    <div id="c9r0" class="tiles"></div>
     
-    } else {
-      board[colIdx][rowIdx] = -1;
-      score = +1;
-      turns = +1;
+    
+    <div id="c0r1" class="tiles"></div>
+    <div id="c1r1" class="tiles"></div>
+    <div id="c2r1" class="tiles"></div>
+    <div id="c3r1" class="tiles"></div>
+    <div id="c4r1" class="tiles"></div>
+    <div id="c5r1" class="tiles"></div>
+    <div id="c6r1" class="tiles"></div>
+    <div id="c7r1" class="tiles"></div>
+    <div id="c8r1" class="tiles"></div>
+    <div id="c9r1" class="tiles"></div>
 
-    console.log(squareClkd);
-    console.log(winner);
-    checkWinner();
-    render();
-  }
-}
+    <div id="c0r2" class="tiles"></div>
+    <div id="c1r2" class="tiles"></div>
+    <div id="c2r2" class="tiles"></div>
+    <div id="c3r2" class="tiles"></div>
+    <div id="c4r2" class="tiles"></div>
+    <div id="c5r2" class="tiles"></div>
+    <div id="c6r2" class="tiles"></div>
+    <div id="c7r2" class="tiles"></div>
+    <div id="c8r2" class="tiles"></div>
+    <div id="c9r2" class="tiles"></div>
+    
+    <div id="c0r3" class="tiles"></div>
+    <div id="c1r3" class="tiles"></div>
+    <div id="c2r3" class="tiles"></div>
+    <div id="c3r3" class="tiles"></div>
+    <div id="c4r3" class="tiles"></div>
+    <div id="c5r3" class="tiles"></div>
+    <div id="c6r3" class="tiles"></div>
+    <div id="c7r3" class="tiles"></div>
+    <div id="c8r3" class="tiles"></div>
+    <div id="c9r3" class="tiles"></div>
+    
+    <div id="c0r4" class="tiles"></div>
+    <div id="c1r4" class="tiles"></div>
+    <div id="c2r4" class="tiles"></div>
+    <div id="c3r4" class="tiles"></div>
+    <div id="c4r4" class="tiles"></div>
+    <div id="c5r4" class="tiles"></div>
+    <div id="c6r4" class="tiles"></div>
+    <div id="c7r4" class="tiles"></div>
+    <div id="c8r4" class="tiles"></div>
+    <div id="c9r4" class="tiles"></div>
+    
+    <div id="c0r5" class="tiles"></div>
+    <div id="c1r5" class="tiles"></div>
+    <div id="c2r5" class="tiles"></div>
+    <div id="c3r5" class="tiles"></div>
+    <div id="c4r5" class="tiles"></div>
+    <div id="c5r5" class="tiles"></div>
+    <div id="c6r5" class="tiles"></div>
+    <div id="c7r5" class="tiles"></div>
+    <div id="c8r5" class="tiles"></div>
+    <div id="c9r5" class="tiles"></div>
+    
+    <div id="c0r6" class="tiles"></div>
+    <div id="c1r6" class="tiles"></div>
+    <div id="c2r6" class="tiles"></div>
+    <div id="c3r6" class="tiles"></div>
+    <div id="c4r6" class="tiles"></div>
+    <div id="c5r6" class="tiles"></div>
+    <div id="c6r6" class="tiles"></div>
+    <div id="c7r6" class="tiles"></div>
+    <div id="c8r6" class="tiles"></div>
+    <div id="c9r6" class="tiles"></div>
+    
+    <div id="c0r7" class="tiles"></div>
+    <div id="c1r7" class="tiles"></div>
+    <div id="c2r7" class="tiles"></div>
+    <div id="c3r7" class="tiles"></div>
+    <div id="c4r7" class="tiles"></div>
+    <div id="c5r7" class="tiles"></div>
+    <div id="c6r7" class="tiles"></div>
+    <div id="c7r7" class="tiles"></div>
+    <div id="c8r7" class="tiles"></div>
+    <div id="c9r7" class="tiles"></div>
 
-function render() {
-  renderBoard();
-  renderMessage();
- }
+    <div id="c1r8" class="tiles"></div>
+    <div id="c2r8" class="tiles"></div>
+    <div id="c0r8" class="tiles"></div>
+    <div id="c3r8" class="tiles"></div>
+    <div id="c4r8" class="tiles"></div>
+    <div id="c5r8" class="tiles"></div>
+    <div id="c6r8" class="tiles"></div>
+    <div id="c7r8" class="tiles"></div>
+    <div id="c8r8" class="tiles"></div>
+    <div id="c9r8" class="tiles"></div>
 
-function renderBoard() {
-    board.forEach(function(colArr, colIdx) {
-        colArr.forEach(function(cellVal, rowIdx){
-            const cellId = `c${colIdx}r${rowIdx}`;
-            const cellEl = document.getElementById(cellId);
-            cellEl.style.backgroundColor = COLOR[cellVal];
-        });
-    });
-  }
-function renderMessage() {
-  if (winner === 1) {
-    messageEl.innerText = "You chose poorly!!!";
-  } else if (winner === -1) {
-    messageEl.innerText = "You chose wisely!!!";
-  } else {
-    messageEl.innerText = "Choose again!!!";
-  }
+    <div id="c0r9" class="tiles"></div>
+    <div id="c1r9" class="tiles"></div>
+    <div id="c2r9" class="tiles"></div>
+    <div id="c3r9" class="tiles"></div>
+    <div id="c4r9" class="tiles"></div>
+    <div id="c5r9" class="tiles"></div>
+    <div id="c6r9" class="tiles"></div>
+    <div id="c7r9" class="tiles"></div>
+    <div id="c8r9" class="tiles"></div>
+    <div id="c9r9" class="tiles"></div>
 
-};
+
+
+  </section>
+
+  <section id="button">
+      <button>GIVE UP!</button>
+  </section>
+  
+</body>
+
+</html>
