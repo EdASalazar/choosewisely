@@ -17,6 +17,7 @@ class ChooseWiselyGame {
   constructor(boardElement, messageElement) {
     this.boardElement = boardElement;
     this.messageElement = messageElement;
+    this.squareEls = boardElement.querySelectorAll('div');
   }
 }
 
@@ -52,7 +53,7 @@ class ChooseWiselyGame {
 initialize();
 
 function initialize() {
-  game = new ChooseWiselyGame(boardEl);
+  game = new ChooseWiselyGame(boardEl, msgEl);
 
 
 }
