@@ -8,6 +8,7 @@ const MINE_PCT = 20;
 let game;
 let board;
 let turn;
+let cells; //maybe
 
 /*----- cached element references -----*/
 const boardEl = document.getElementById('board');
