@@ -67,6 +67,23 @@ class ChooseWiselyGame {
 
   render() {
     this.squares.forEach(square => square.render());
+ 
+// Render the cells
+// board.forEach(function(rowArr) {
+//   rowArr.forEach(function(cell) {
+//     cell.render();
+//   });
+// });
+
+    // for (let rowIdx = 0; rowIdx < BOARD_ROWS; rowIdx++) {
+    //   board[rowIdx] = [];
+    //   for (let colIdx = 0; colIdx < BOARD_COLS; colIdx++) {
+        // if(cell.isRendered && cellisMine){game over you lose};
+        //if(cell.isRendered){render the cell.adjMineCount};
+        //else render 'blank'
+    //   }
+    // }
+
     // NEW CODE BELOW
     // if (this.winner === '-1') {
     //   this.messageElement.innerHTML = 'Rats, another tie!';
@@ -83,7 +100,26 @@ class ChooseWiselyGame {
 
 }
 
+// class Cell {
+//   constructor(rowIdx, colIdx) {
+//     this.isMine = Math.random() < (MINE_PCT / 100);
+//     this.isRevealed: false;
+//     ...
+//   }
 
+//   computeAdjMineCount() {
+//     let neighbors = [];
+//     // TODO: Push each neighboring cell into neighbors
+//     let count = 0;
+//     // TODO: Loop through the cells in neighbors
+//     //       and increment count if the cell is a mine
+//     this.adjMineCount = count;
+//   }
+
+//   render() {
+//     // TODO: Put the rendering logic here
+//   }
+// }
 /*----- functions -----*/
  
 
@@ -102,11 +138,15 @@ function init() {
         rowIdx,
         colIdx,
       
-          
-        // });
       });
     }
   }
+//   for (let rowIdx = 0; rowIdx < BOARD_ROWS; rowIdx++)
+//  board[rowIdx] = [];
+// for (let colIdx = 0; colIdx < BOARD_COLS; colIdx++) {
+	// document.querySelectorAll("sectin:first-child")
+  // .setAttribute('id', 323)
+// };
   // TODO: Iterate over cells to plant mines
   // TODO: Iterate over cells to compute adjMineCount
 }
