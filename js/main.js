@@ -21,13 +21,11 @@ class Square {
     this.domElement = domElement;
     this.value = null;
   }
-
-static renderLookUp = {
-        '1': 'black',
-        '-1': 'red',
-        'null': 'grey',
-  };
-
+  static renderLookup = {
+    '1': 'blue',
+    '-1': 'red',
+    'null': 'darkgrey'
+  }
   render() {
     this.domElement.style.backgroundColor = Square.renderLookup[this.value];
   }
@@ -52,7 +50,7 @@ class ChooseWiselyGame {
     });
   }
   play() {
-    this.turn = 1; //may not be necessary
+    // this.turn = 1; //may not be necessary
     this.winner = null;
     this.squares = this.squareEls.map(el => new Square(el));
     this.render();
@@ -81,7 +79,7 @@ class ChooseWiselyGame {
     return `${this.winner} Chose Wisely`;
   }
 
-
+}
 
 
 /*----- functions -----*/
@@ -95,16 +93,14 @@ function init() {
     board[rowIdx] = [];
     for (let colIdx = 0; colIdx < BOARD_COLS; colIdx++) {
       board[rowIdx].push({
-        isMine: false,  // TBD later
+        isMine: Math.random() < (MINE_PCT / 100),
         isRevealed: false,
         isFlagged: false,
         adjMineCount: null,  // Compute after mines are determined
         rowIdx,
         colIdx,
-        //not sure if this is right
-        // board[rowIdx].push({
-        //   isMine: Math.random() < (MINE_PCT / 100),
-        //   isRevealed: false,
+      
+          
         // });
       });
     }
