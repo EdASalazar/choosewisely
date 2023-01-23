@@ -21,6 +21,7 @@ class Square {
     this.domElement = domElement;
     this.value = null;
   }
+
   static renderLookup = {
     '1': 'blue',
     '-1': 'red',
@@ -39,6 +40,7 @@ class ChooseWiselyGame {
     this.boardElement.addEventListener('click', (evt) => {
       const idx = this.squareEls.indexOf(evt.target);
       // Guards
+      //kicking out an error.
       if (idx === -1 || this.squares[idx].value || this.winner) return;
       // Update the square object
       this.squares[idx].value = this.turn;  // common typo 
