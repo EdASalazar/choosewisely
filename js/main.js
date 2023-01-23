@@ -61,22 +61,26 @@ class ChooseWiselyGame {
   getWinner() {
     //(if idx === idx of land mine){
       //game over
+      // if (this.squares.some(square => square.value === null)) return null;
+      // return 'Win';
     }
 
   render() {
-    // console.log("Render Game..");
+    this.squares.forEach(square => square.render());
+    // NEW CODE BELOW
+    // if (this.winner === '-1') {
+    //   this.messageElement.innerHTML = 'Rats, another tie!';
+    // } else if (this.winner) {
+    //   this.messageElement.innerHTML = `Player ${this.winner === 1 ? 1 : 2} Wins!`;
+    // } else {
+    //   this.messageElement.innerHTML = `Player ${this.turn === 1 ? 1 : 2}'s Turn`;
+    // }
   }
 
   toString() {
     return `${this.winner} Chose Wisely`;
   }
-  //may not need for this game. It's not like tic tac toe
-  // static winningCombos = [
 
-  // ];
-}
-//event listners 
-// document.getElementById('board').addEventListener('click', handleChoice);
 
 
 
