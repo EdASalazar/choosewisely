@@ -70,6 +70,7 @@ class ChooseWiselyGame {
   getWinner() {
     // if (document.board[0][0].isFlagged === false) {
         
+
     // };
     }
   
