@@ -7,6 +7,7 @@ this.squares = this.squareEls.map(el => new Square(el));
 /*----- app's state (variables) -----*/
 let game;
 let board;
+let turn;
 
 /*----- cached element references -----*/
 const boardEl = document.getElementById('board');
@@ -39,10 +40,15 @@ class ChooseWiselyGame {
     this.squareEls = [...boardElement.querySelectorAll('div')];
     this.boardElement.addEventListener('click', (evt) => {
       const idx = this.squareEls.indexOf(evt.target);
-      if( idx === -1 || this.square[idx].value) || this.winner)
-        return; 
-        this.winner = this.getWinner();
-        this.render();
+      // Guards
+      if (idx === -1 || this.squares[idx].value || this.winner) return;
+      // Update the square object
+      this.squares[idx].value = this.turn;  // common typo 
+      this.turn += 1;
+      this.winner = this.getWinner();
+      // Render updated state
+      this.render();
+    });
   }
   play() {
     this.turn = 1; //may not be necessary
