@@ -56,6 +56,12 @@ class ChooseWiselyGame {
     this.squares = this.squareEls.map(el => new Square(el));
     this.render();
   }
+
+  getWinner() {
+    //(if idx === idx of land mine){
+      //game over
+    }
+
   render() {
     console.log("Render Game..");
   }
