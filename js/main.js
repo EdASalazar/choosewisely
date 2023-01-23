@@ -29,6 +29,8 @@ class Square {
   }
   render() {
     this.domElement.style.backgroundColor = Square.renderLookup[this.value];
+    //i can add an id but how do I do this so each div has a unique id
+    this.domElement.id = Square.renderLookup[this.value]; 
   }
 }
 
@@ -40,7 +42,6 @@ class ChooseWiselyGame {
     this.boardElement.addEventListener('click', (evt) => {
       const idx = this.squareEls.indexOf(evt.target);
       // Guards
-      //kicking out an error.
       if (idx === -1 || this.squares[idx].value || this.winner) return;
       // Update the square object
       this.squares[idx].value = this.turn;  // common typo 
@@ -84,14 +85,6 @@ class ChooseWiselyGame {
     //   }
     // }
 
-    // NEW CODE BELOW
-    // if (this.winner === '-1') {
-    //   this.messageElement.innerHTML = 'Rats, another tie!';
-    // } else if (this.winner) {
-    //   this.messageElement.innerHTML = `Player ${this.winner === 1 ? 1 : 2} Wins!`;
-    // } else {
-    //   this.messageElement.innerHTML = `Player ${this.turn === 1 ? 1 : 2}'s Turn`;
-    // }
   }
 
   toString() {
