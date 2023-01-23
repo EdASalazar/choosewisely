@@ -9,6 +9,7 @@ let game;
 let board;
 let turn;
 let clickedCell;
+let boardArrayThing = [];
 // let cells; //maybe
 
 /*----- cached element references -----*/
@@ -46,16 +47,16 @@ class ChooseWiselyGame {
       this.turn += 1;
       const clickCol = parseInt(evt.target.id.slice(1, 3));
       const clickRow = parseInt(evt.target.id.slice(5, 7));
-      clickedCell = board[clickCol][clickRow];
+      clickedCell = board[clickRow][clickCol];
       this.resolveClick();
-  
       this.winner = this.getWinner();
 
 
 
      
-      console.log(clickedCell);
-      
+      // console.log(clickedCell);
+     
+  
        
 
       this.render();
@@ -68,45 +69,38 @@ class ChooseWiselyGame {
     this.squares = this.squareEls.map(el => new Square(el));
     this.render();
   }
-
-  getWinner() {
-    
-
-    // if (document.clickedCell.isFlagged === false && document.board[0][0].isMine === false ) {
-
-
-    // };
-    }
   
+  getWinner() {
+ 
+    }
+    
   render() {
     this.squares.forEach(square => square.render());
- 
+      
+    }
+    
+  resolveClick() {
+    if (clickedCell.isMine === true){
+      console.log(dead);
+    };
   }
-  // function resolveClick() {
-
+    
+    
+  }
   
-  // }
-  
 
-
-  // toString() {
-  //   return `${this.winner} Chose Wisely`;
-  // }
-
-}
-
-/*----- functions -----*/
- 
-
-init();
-//from Jim's post 
-function init() {
-  board = [];
-  for (let rowIdx = 0; rowIdx < BOARD_ROWS; rowIdx++) {
-    board[rowIdx] = [];
-    for (let colIdx = 0; colIdx < BOARD_COLS; colIdx++) {
-      board[rowIdx].push({ //could switch the below into an object. 
-        isMine: Math.random() < (MINE_PCT / 100),
+    
+    /*----- functions -----*/
+    
+    
+    init();
+    function init() {
+      board = [];
+      for (let rowIdx = 0; rowIdx < BOARD_ROWS; rowIdx++) {
+        board[rowIdx] = [];
+        for (let colIdx = 0; colIdx < BOARD_COLS; colIdx++) {
+          board[rowIdx].push({ //could switch the below into an object. 
+            isMine: Math.random() < (MINE_PCT / 100),
         isRevealed: false,
         isFlagged: false,
         adjMineCount: null,  // Compute after mines are determined
@@ -119,21 +113,25 @@ function init() {
 
   }
 
-  function computeAdjMineCount(cell) {
+  function computeAdjMineCount(board) {
     let neigbors = [];
+    let boardLocation;
+//row
+for (let i = 0; rowIdx < BOARD_ROWS; i++){
+  //column
+  for (let j = 0; j < BOARD_COLS; j++) {
+    boardArrayThing.push(board[i][j]);
+  }
+      // function checkDiagonalMineNWSE(colIdx, rowIdx) {
+      //   const adjCountNW = countAdjacent(colIdx, rowIdx, -1, 1)
+      //   const adjCountSE = countAdjacent(colIdx, rowIdx, 1, -1)
+      // }
 
-for (let rowIdx = 0; rowIdx < BOARD_ROWS; rowIdx++){
-  for (let colIdx = 0; colIdx < BOARD_COLS; colIdx++) {
-      function checkDiagonalMineNWSE(colIdx, rowIdx) {
-        const adjCountNW = countAdjacent(colIdx, rowIdx, -1, 1)
-        const adjCountSE = countAdjacent(colIdx, rowIdx, 1, -1)
-      }
 
 
-
-  board[rowIdx].adjMineCount +=1
-};
-};
+// //   board[rowIdx].adjMineCount +=1
+// // };
+// };
   // TODO: Iterate over cells to compute adjMineCount
 }
 
