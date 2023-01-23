@@ -48,6 +48,7 @@ class ChooseWiselyGame {
       this.winner = this.getWinner();
       // Render updated state
       this.render();
+      console.log(evt.target);
     });
   }
   play() {
@@ -63,11 +64,11 @@ class ChooseWiselyGame {
     }
 
   render() {
-    console.log("Render Game..");
+    // console.log("Render Game..");
   }
 
   toString() {
-    return `Tic Tac Toe / winner is  - > ${this.winner}`;
+    return `${this.winner} Chose Wisely`;
   }
   //may not need for this game. It's not like tic tac toe
   // static winningCombos = [
@@ -100,6 +101,7 @@ function init() {
         // board[rowIdx].push({
         //   isMine: Math.random() < (MINE_PCT / 100),
         //   isRevealed: false,
+        // });
       });
     }
   }
