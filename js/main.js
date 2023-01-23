@@ -44,7 +44,8 @@ class ChooseWiselyGame {
       this.squares[idx].value = this.turn;  
       this.turn += 1;
       this.winner = this.getWinner();
-      
+        const colIdx = evt.target.id.slice(1, 3);
+        const rowIdx = evt.target.id.slice(5, 7);
       this.render();
       console.log(evt.target);
     });
