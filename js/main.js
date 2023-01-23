@@ -13,6 +13,22 @@ const boardEl = document.getElementById('board');
 const msgEl = document.getElementById('message');
 
 /*----- classes -----*/
+class Square {
+  constructor(domElement) {
+    this.domElement = domElement;
+    this.value = null;
+  }
+
+static renderLookUp = {
+        '1': 'black',
+        '-1': 'red',
+        'null': 'grey',
+  };
+  render() {
+    this.domElement.style.backgroundColor = Square.renderLookup[this.value];
+  }
+}
+
 class ChooseWiselyGame {
   constructor(boardElement, messageElement) {
     this.boardElement = boardElement;
@@ -23,7 +39,7 @@ class ChooseWiselyGame {
   play() {
     this.turn = 1; //may not be necessary
     this.winner = null;
-    // this.squares = ???;
+    this.squares = this.squareEls.map(el => new Square(el));
     this.render();
   }
   render() {
@@ -33,15 +49,15 @@ class ChooseWiselyGame {
   toString() {
     return `Tic Tac Toe / winner is  - > ${this.winner}`;
   }
-  
+  //may not need for this game. It's not like tic tac toe
+  // static winningCombos = [
 
+  // ];
 }
+//event listners 
+// document.getElementById('board').addEventListener('click', handleChoice);
+// playAgainBtn.addEventListener("click", init);
 
-// class Square {
-//   constructor(domElement) {
-//     this.domElement = domElement;
-//     this.value = null;
-//   }
 
 /*----- functions -----*/
  
@@ -63,8 +79,8 @@ class ChooseWiselyGame {
 //       });
 //     }
 //   }
-  // TODO: Iterate over cells to plant mines
-  // TODO: Iterate over cells to compute adjMineCount
+//   // TODO: Iterate over cells to plant mines
+//   // TODO: Iterate over cells to compute adjMineCount
 // }
 
 
