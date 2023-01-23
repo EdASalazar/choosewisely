@@ -31,7 +31,7 @@ class Square {
   render() {
     this.domElement.style.backgroundColor = Square.renderLookup[this.value];
     //i can add an id but how do I do this so each div has a unique id
-    this.domElement.id = Square.renderLookup[this.value]; 
+    // this.domElement.id = Square.renderLookup[this.value]; 
   }
 }
 
@@ -124,7 +124,7 @@ function init() {
   for (let rowIdx = 0; rowIdx < BOARD_ROWS; rowIdx++) {
     board[rowIdx] = [];
     for (let colIdx = 0; colIdx < BOARD_COLS; colIdx++) {
-      board[rowIdx].push({
+      board[rowIdx].push({ //could switch the below into an object. 
         isMine: Math.random() < (MINE_PCT / 100),
         isRevealed: false,
         isFlagged: false,
@@ -134,6 +134,8 @@ function init() {
       
       });
     }
+//function set adjct mine count (helper function)
+
   }
 //   for (let rowIdx = 0; rowIdx < BOARD_ROWS; rowIdx++)
 //  board[rowIdx] = [];
