@@ -8,7 +8,7 @@ const MINE_PCT = 20;
 let game;
 let board;
 let turn;
-let cells; //maybe
+// let cells; //maybe
 
 /*----- cached element references -----*/
 const boardEl = document.getElementById('board');
@@ -30,8 +30,6 @@ class Square {
   }
   render() {
     this.domElement.style.backgroundColor = Square.renderLookup[this.value];
-    //i can add an id but how do I do this so each div has a unique id
-    // this.domElement.id = Square.renderLookup[this.value]; 
   }
 }
 
@@ -42,13 +40,11 @@ class ChooseWiselyGame {
     this.squareEls = [...boardElement.querySelectorAll('div')];
     this.boardElement.addEventListener('click', (evt) => {
       const idx = this.squareEls.indexOf(evt.target);
-      // Guards
       if (idx === -1 || this.squares[idx].value || this.winner) return;
-      // Update the square object
-      this.squares[idx].value = this.turn;  // common typo 
+      this.squares[idx].value = this.turn;  
       this.turn += 1;
       this.winner = this.getWinner();
-      // Render updated state
+      
       this.render();
       console.log(evt.target);
     });
