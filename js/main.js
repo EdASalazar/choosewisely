@@ -1,7 +1,7 @@
 /*----- constants -----*/
 const BOARD_ROWS = 8;
 const BOARD_COLS = 8;
-
+this.squares = this.squareEls.map(el => new Square(el));
 
 
 /*----- app's state (variables) -----*/
@@ -62,26 +62,30 @@ class ChooseWiselyGame {
 /*----- functions -----*/
  
 
-// init();
-
-// function init() {
-//   board = [];
-//   for (let rowIdx = 0; rowIdx < BOARD_ROWS; rowIdx++) {
-//     board[rowIdx] = [];
-//     for (let colIdx = 0; colIdx < BOARD_COLS; colIdx++) {
-//       board[rowIdx].push({
-//         isMine: false,  // TBD later
-//         isRevealed: false,
-//         isFlagged: false,
-//         adjMineCount: null,  // Compute after mines are determined
-//         rowIdx,
-//         colIdx,
-//       });
-//     }
-//   }
-//   // TODO: Iterate over cells to plant mines
-//   // TODO: Iterate over cells to compute adjMineCount
-// }
+init();
+//from Jim's post 
+function init() {
+  board = [];
+  for (let rowIdx = 0; rowIdx < BOARD_ROWS; rowIdx++) {
+    board[rowIdx] = [];
+    for (let colIdx = 0; colIdx < BOARD_COLS; colIdx++) {
+      board[rowIdx].push({
+        isMine: false,  // TBD later
+        isRevealed: false,
+        isFlagged: false,
+        adjMineCount: null,  // Compute after mines are determined
+        rowIdx,
+        colIdx,
+        //not sure if this is right
+        board[rowIdx].push({
+          isMine: Math.random() < (MINE_PCT / 100),
+          isRevealed: false,
+      });
+    }
+  }
+  // TODO: Iterate over cells to plant mines
+  // TODO: Iterate over cells to compute adjMineCount
+}
 
 
 initialize();
