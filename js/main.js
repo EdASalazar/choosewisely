@@ -11,6 +11,8 @@ let board;
 /*----- cached element references -----*/
 const boardEl = document.getElementById('board');
 const msgEl = document.getElementById('message');
+document.querySelector('button')
+.addEventListener('click', init);
 
 /*----- classes -----*/
 class Square {
@@ -24,6 +26,7 @@ static renderLookUp = {
         '-1': 'red',
         'null': 'grey',
   };
+
   render() {
     this.domElement.style.backgroundColor = Square.renderLookup[this.value];
   }
@@ -34,7 +37,12 @@ class ChooseWiselyGame {
     this.boardElement = boardElement;
     this.messageElement = messageElement;
     this.squareEls = [...boardElement.querySelectorAll('div')];
-
+    this.boardElement.addEventListener('click', (evt) => {
+      const idx = this.squareEls.indexOf(evt.target);
+      if( idx === -1 || this.square[idx].value) || this.winner)
+        return; 
+        this.winner = this.getWinner();
+        this.render();
   }
   play() {
     this.turn = 1; //may not be necessary
@@ -56,7 +64,7 @@ class ChooseWiselyGame {
 }
 //event listners 
 // document.getElementById('board').addEventListener('click', handleChoice);
-// playAgainBtn.addEventListener("click", init);
+
 
 
 /*----- functions -----*/
@@ -77,9 +85,9 @@ function init() {
         rowIdx,
         colIdx,
         //not sure if this is right
-        board[rowIdx].push({
-          isMine: Math.random() < (MINE_PCT / 100),
-          isRevealed: false,
+        // board[rowIdx].push({
+        //   isMine: Math.random() < (MINE_PCT / 100),
+        //   isRevealed: false,
       });
     }
   }
