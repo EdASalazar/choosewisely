@@ -1,7 +1,7 @@
 /*----- constants -----*/
 const BOARD_ROWS = 8;
 const BOARD_COLS = 8;
-this.squares = this.squareEls.map(el => new Square(el));
+const MINE_PCT = 20;
 
 
 /*----- app's state (variables) -----*/
