@@ -47,6 +47,8 @@ class ChooseWiselyGame {
       const clickCol = parseInt(evt.target.id.slice(1, 3));
       const clickRow = parseInt(evt.target.id.slice(5, 7));
       clickedCell = board[clickCol][clickRow];
+      this.resolveClick();
+  
       this.winner = this.getWinner();
 
 
@@ -68,8 +70,10 @@ class ChooseWiselyGame {
   }
 
   getWinner() {
-    // if (document.board[0][0].isFlagged === false) {
-        
+    
+
+    // if (document.clickedCell.isFlagged === false && document.board[0][0].isMine === false ) {
+
 
     // };
     }
@@ -78,10 +82,16 @@ class ChooseWiselyGame {
     this.squares.forEach(square => square.render());
  
   }
+  // function resolveClick() {
 
-  toString() {
-    return `${this.winner} Chose Wisely`;
-  }
+  
+  // }
+  
+
+
+  // toString() {
+  //   return `${this.winner} Chose Wisely`;
+  // }
 
 }
 
@@ -108,13 +118,22 @@ function init() {
 //function set adjct mine count (helper function)
 
   }
-//   for (let rowIdx = 0; rowIdx < BOARD_ROWS; rowIdx++)
-//  board[rowIdx] = [];
-// for (let colIdx = 0; colIdx < BOARD_COLS; colIdx++) {
-	// document.querySelectorAll("sectin:first-child")
-  // .setAttribute('id', 323)
-// };
-  // TODO: Iterate over cells to plant mines
+
+  function computeAdjMineCount(cell) {
+    let neigbors = [];
+
+for (let rowIdx = 0; rowIdx < BOARD_ROWS; rowIdx++){
+  for (let colIdx = 0; colIdx < BOARD_COLS; colIdx++) {
+      function checkDiagonalMineNWSE(colIdx, rowIdx) {
+        const adjCountNW = countAdjacent(colIdx, rowIdx, -1, 1)
+        const adjCountSE = countAdjacent(colIdx, rowIdx, 1, -1)
+      }
+
+
+
+  board[rowIdx].adjMineCount +=1
+};
+};
   // TODO: Iterate over cells to compute adjMineCount
 }
 
