@@ -8,6 +8,7 @@ const MINE_PCT = 20;
 let game;
 let board;
 let turn;
+let clickedCell;
 // let cells; //maybe
 
 /*----- cached element references -----*/
@@ -43,15 +44,20 @@ class ChooseWiselyGame {
       if (idx === -1 || this.squares[idx].value || this.winner) return;
       this.squares[idx].value = this.turn;  
       this.turn += 1;
+      const clickCol = parseInt(evt.target.id.slice(1, 3));
+      const clickRow = parseInt(evt.target.id.slice(5, 7));
+      clickedCell = board[clickCol][clickRow];
       this.winner = this.getWinner();
-      const colIdx = evt.target.id.slice(1, 3);
-      const rowIdx = evt.target.id.slice(5, 7);
-      console.log(colIdx);
+
+
+
+     
+      console.log(clickedCell);
       
        
 
       this.render();
-      console.log(evt.target);
+      
     });
   }
   play() {
@@ -62,13 +68,9 @@ class ChooseWiselyGame {
   }
 
   getWinner() {
-
-    //(if idx === idx of land mine){
-      //game over
-      // if (this.squares.some(square => square.value === null)) return null;
-      // return 'Win';
+    if (clickedCell) {};
     }
-
+  
   render() {
     this.squares.forEach(square => square.render());
  
