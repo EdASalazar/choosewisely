@@ -44,7 +44,7 @@ class Square {
     'null': 'darkgrey' //isRevealed = false
   }
   render() {
-    this.domElement.style.backgroundColor = Square.renderLookup[this.value];
+    // this.domElement.style.backgroundColor = Square.renderLookup[this.value];
 
   }
 }
@@ -104,10 +104,10 @@ resolveClick() {
     (clickedSquare.isFlagged === false && clickedSquare.isRevealed === false) {
       clickedSquare.isRevealed = true; 
   } 
-  if(clickedSquare.isRevealed === true) {
-    console.log("document.getElementById(innerHTML = `${clickedSquare.adjMineCount.value}`)")
+  if(clickedSquare.isRevealed === true && clickedSquare.adjMineCount !== 0) {
+    // console.log("document.getElementById(innerHTML = `${clickedSquare.adjMineCount.value}`)")
   } else {
-    console.log("reveal blank square");
+    clickedSquare.isRevealed = true; 
   }
   
 }
@@ -128,11 +128,11 @@ resolveClick() {
 
     board.forEach(function(rowArr, rowIdx) {
       rowArr.forEach(function(square, colIdx) {
+        let cellEl = document.getElementById(`r${rowIdx} c${colIdx}`)
         if (square.isMine === true) {
-          // console.log("boom");
         } else if (square.isRevealed === true) {
-        document.getElementById() = 'black';
-          console.log('square');
+          cellEl.style.backgroundColor = 'red';
+          console.log('cellEl');
         }
         
       });

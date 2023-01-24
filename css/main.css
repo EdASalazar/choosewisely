@@ -29,7 +29,7 @@ header {
 #board > div {
   height: 4vh;
   width: 4vh;
- /* background-color: #8796A9; */
+  background-color: #8796A9;
   border: 1px solid black;
   border-radius: 10%;
 }
