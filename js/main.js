@@ -63,19 +63,22 @@ class ChooseWiselyGame {
       const clickCol = parseInt(evt.target.id.slice(1, 3));
       const clickRow = parseInt(evt.target.id.slice(5, 7));
       clickedCell = board[clickRow][clickCol];
-      // this.resolveClick();
+      this.resolveClick();
+
       this.winner = this.getWinner();
-      
-      // console.log(clickedCell.isMine);
-      // if (clickedCell.isMine === true){
-      //   loss === true;
-      //   render
-      // } else if {  }
+      console.log(clickedCell);
+      console.log(evt.targ);
 
       this.render();
       
     });
   }
+
+resolveClick() {
+  if(clickedCell.isMine === false) {
+    document.idx.style.backgroundColor = 'black';
+  } 
+}
 
   play() {
     // this.turn = 1; //may not be necessary
