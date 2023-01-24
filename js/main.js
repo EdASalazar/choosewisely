@@ -33,6 +33,7 @@ class Square {
   }
   render() {
     this.domElement.style.backgroundColor = Square.renderLookup[this.value];
+
   }
 }
 
@@ -66,7 +67,7 @@ class ChooseWiselyGame {
 
       this.winner = this.getWinner();
       console.log(clickedCell);
-      console.log(evt.targ);
+      // console.log(evt.targ);
 
       this.render();
       
@@ -75,10 +76,17 @@ class ChooseWiselyGame {
 //the click is mostly just changing the values in the object
 //the change from false to true changes it in the render process. I think.
 resolveClick() {
-  if(clickedCell.isFlagged === false && clickedCell.isRevealed === false) {
-    { }
-      
+  if (clickedCell.isMine === true) { 
+     console.log("you're dead"); 
+  }
+   else if 
+    (clickedCell.isFlagged === false && clickedCell.isRevealed === false) {
+      console.log("clickedCell.isRevealed === true"); 
   } 
+  if(clickedCell.isRevealed === true && adjMineCount !==0) {
+    console.log("document.getElementById(innerHTML = `${clickedCell.adjMineCount.value}`)")
+  }
+  
 }
 
   play() {
@@ -94,6 +102,13 @@ resolveClick() {
     
   render() {
     this.squares.forEach(square => square.render());
+  //   for (let rowIdx = 0; rowIdx < BOARD_ROWS; rowIdx++) {
+  //     for (let colIdx = 0; colIdx < BOARD_COLS; colIdx++) {
+  //       //check the value of isFlagged, isMine, isRevealed
+  //       //change board accordingling and updated message. 
+  //       // console.log(cell)
+  //     }
+  //   }
       
     }
   }
