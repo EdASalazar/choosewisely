@@ -55,7 +55,10 @@ class ChooseWiselyGame {
     this.boardElement = boardElement;
     this.messageElement = messageElement;
     this.squareEls = [...boardElement.querySelectorAll('div')];
-    // this.boardElement.addEventListener('conetextmenu', (evt) =>{});
+    // this.boardElement.addEventListener('conetextmenu', (evt) => {
+    //   this.boardElement.isFlagged = true;
+    //   console.log(this.boardElement);
+    // });
     this.boardElement.addEventListener('click', (evt) => {
       const idx = this.squareEls.indexOf(evt.target);
       if (idx === -1 || this.squares[idx].value || this.winner) return;
