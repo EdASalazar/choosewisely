@@ -55,6 +55,7 @@ class ChooseWiselyGame {
     this.boardElement = boardElement;
     this.messageElement = messageElement;
     this.squareEls = [...boardElement.querySelectorAll('div')];
+    // this.boardElement.addEventListener('conetextmenu', (evt) =>{});
     this.boardElement.addEventListener('click', (evt) => {
       const idx = this.squareEls.indexOf(evt.target);
       if (idx === -1 || this.squares[idx].value || this.winner) return;
@@ -77,7 +78,7 @@ class ChooseWiselyGame {
 //the change from false to true changes it in the render process. I think.
 resolveClick() {
   if (clickedCell.isMine === true) { 
-     console.log("you're dead"); 
+     console.log("you're dead"); return;
   }
    else if 
     (clickedCell.isFlagged === false && clickedCell.isRevealed === false) {
@@ -85,6 +86,8 @@ resolveClick() {
   } 
   if(clickedCell.isRevealed === true && adjMineCount !==0) {
     console.log("document.getElementById(innerHTML = `${clickedCell.adjMineCount.value}`)")
+  } else {
+    console.log("reveal blank square");
   }
   
 }
