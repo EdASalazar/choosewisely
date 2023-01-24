@@ -115,21 +115,28 @@ class ChooseWiselyGame {
     for (let rowIdx=0; rowIdx < BOARD_ROWS; rowIdx++) {
       for (let colIdx =0; colIdx < BOARD_COLS; colIdx++){
         const cell = board[rowIdx][colIdx];
-        cell.neigbors = getNeighbors(cell);
-        cell.adjMineCount = cell.neigbors.reduce((count, cell) => cell.isMine ? count +1 : count, 0);
+        cell.neighbors = getNeighbors(cell);
+        cell.adjMineCount = cell.neighbors.reduce((count, cell) => cell.isMine ? count +1 : count, 0);
       }
     }
 
   }
 
   function getNeighbors(cell) {
-    const neighors = [];
+    const neighbors = [];
     for (let rowOffset = -1; rowOffset < 2; rowOffset++) {
-      
+      for (let colOffset = -1; colOffset < 2; colOffset++) {
+        const rowIdx = cell.rowIdx + rowOffset;
+        const colIdx = cell.colIdx + colOffset;
+        if (
+          !(rowIdx === cell.rowIdx && colIdx === cell.colIdx) &&
+          rowIdx >= 0 && rowIdx < board.length &&
+          colIdx >= 0 && colIdx < board[0].length
+        ) neighbors.push(board[rowIdx][colIdx]);
+      }
     }
+    return neighbors;
   }
-  }
-};
 console.log(boardArrayThing);
 
  }
