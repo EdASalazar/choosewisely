@@ -9,7 +9,8 @@ let game;
 let board;
 let turn;
 let clickedCell;
-let boardArrayThing = [];
+let boardArrayThing = []; //delete eventually
+let newBoard; //delete eventually
 // let cells; //maybe
 
 /*----- cached element references -----*/
@@ -117,24 +118,26 @@ class ChooseWiselyGame {
     let neigbors = [];
     let boardLocation;
 //row
-for (let i = 0; rowIdx < BOARD_ROWS; i++){
+for (let i = 0; i < BOARD_ROWS; i++){
   //column
   for (let j = 0; j < BOARD_COLS; j++) {
     boardArrayThing.push(board[i][j]);
+    // boardArrayThing.push(board[i][j]);
+
   }
-      // function checkDiagonalMineNWSE(colIdx, rowIdx) {
-      //   const adjCountNW = countAdjacent(colIdx, rowIdx, -1, 1)
-      //   const adjCountSE = countAdjacent(colIdx, rowIdx, 1, -1)
-      // }
+  // function checkDiagonalMineNWSE(colIdx, rowIdx) {
+    //   const adjCountNW = countAdjacent(colIdx, rowIdx, -1, 1)
+    //   const adjCountSE = countAdjacent(colIdx, rowIdx, 1, -1)
+    // }
+    // //   board[rowIdx].adjMineCount +=1
+    // // };
+    // };
+    // TODO: Iterate over cells to compute adjMineCount
+  }
+};
+console.log(boardArrayThing);
 
-
-
-// //   board[rowIdx].adjMineCount +=1
-// // };
-// };
-  // TODO: Iterate over cells to compute adjMineCount
-}
-
+ }
 
 initialize();
 
