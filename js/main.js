@@ -122,7 +122,7 @@ function init() {
       const cell = board[rowIdx][colIdx];
       cell.neighbors = getNeighbors(cell);
       cell.adjMineCount = cell.neighbors.reduce((count, cell) => cell.isMine ? count + 1 : count, 0);
-      console.log(cell)
+      // console.log(cell)
     }
   }
 }
