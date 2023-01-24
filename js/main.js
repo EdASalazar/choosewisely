@@ -54,11 +54,22 @@ class ChooseWiselyGame {
   constructor(boardElement, messageElement) {
     this.boardElement = boardElement;
     this.messageElement = messageElement;
+
     this.squareEls = [...boardElement.querySelectorAll('div')];
-    // this.boardElement.addEventListener('conetextmenu', (evt) => {
-    //   this.boardElement.isFlagged = true;
-    //   console.log(this.boardElement);
-    // });
+//right click
+    this.boardElement.addEventListener('contextmenu', (evt) => {
+      const idx = this.squareEls.indexOf(evt.target);
+      if (idx === -1 || this.squares[idx].value || this.winner) return;
+      this.squares[idx].value = this.turn;  
+      this.turn += 1;
+      const clickCol = parseInt(evt.target.id.slice(1, 3));
+      const clickRow = parseInt(evt.target.id.slice(5, 7));
+      clickedCell = board[clickRow][clickCol];
+     if(clickedCell.isFlagged === false) {
+      clickedCell.isFlagged = true;
+     } else {clickedCell.isFlagged = false};
+  });
+//left click
     this.boardElement.addEventListener('click', (evt) => {
       const idx = this.squareEls.indexOf(evt.target);
       if (idx === -1 || this.squares[idx].value || this.winner) return;
@@ -67,6 +78,8 @@ class ChooseWiselyGame {
       const clickCol = parseInt(evt.target.id.slice(1, 3));
       const clickRow = parseInt(evt.target.id.slice(5, 7));
       clickedCell = board[clickRow][clickCol];
+
+
       this.resolveClick();
 
       this.winner = this.getWinner();
@@ -178,3 +191,11 @@ function initialize() {
   game.play();
 
 }
+
+//flood() {
+// let (i = 0: i < neighbors.array; i++) {
+//   if (.isFlagged === false && isMine === false) {
+//     .isRevealed = true;
+
+// }
+// }
