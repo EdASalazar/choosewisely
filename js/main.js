@@ -112,29 +112,22 @@ class ChooseWiselyGame {
       
       });
     }
-//function set adjct mine count (helper function)
+    for (let rowIdx=0; rowIdx < BOARD_ROWS; rowIdx++) {
+      for (let colIdx =0; colIdx < BOARD_COLS; colIdx++){
+        const cell = board[rowIdx][colIdx];
+        cell.neigbors = getNeighbors(cell);
+        cell.adjMineCount = cell.neigbors.reduce((count, cell) => cell.isMine ? count +1 : count, 0);
+      }
+    }
 
   }
 
-  function computeAdjMineCount(board) {
-    let neigbors = [];
-    let boardLocation;
-//row
-for (let i = 0; i < BOARD_ROWS; i++){
-  //column
-  for (let j = 0; j < BOARD_COLS; j++) {
-    boardArrayThing.push(board[i][j]);
-    // boardArrayThing.push(board[i][j]);
-
+  function getNeighbors(cell) {
+    const neighors = [];
+    for (let rowOffset = -1; rowOffset < 2; rowOffset++) {
+      
+    }
   }
-  // function checkDiagonalMineNWSE(colIdx, rowIdx) {
-    //   const adjCountNW = countAdjacent(colIdx, rowIdx, -1, 1)
-    //   const adjCountSE = countAdjacent(colIdx, rowIdx, 1, -1)
-    // }
-    // //   board[rowIdx].adjMineCount +=1
-    // // };
-    // };
-    // TODO: Iterate over cells to compute adjMineCount
   }
 };
 console.log(boardArrayThing);
