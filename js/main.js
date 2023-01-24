@@ -85,9 +85,9 @@ resolveClick() {
   }
    else if 
     (clickedCell.isFlagged === false && clickedCell.isRevealed === false) {
-      console.log("clickedCell.isRevealed === true"); 
+      clickedCell.isRevealed = true; 
   } 
-  if(clickedCell.isRevealed === true && adjMineCount !==0) {
+  if(clickedCell.isRevealed === true) {
     console.log("document.getElementById(innerHTML = `${clickedCell.adjMineCount.value}`)")
   } else {
     console.log("reveal blank square");
