@@ -15,9 +15,8 @@ let clickedSquare;
 /*----- cached element references -----*/
 const boardEl = document.getElementById('board');
 const msgEl = document.getElementById('message');
-document.querySelector('button')
-.addEventListener('click', init);
-
+const resetBtn = document.querySelector('button').addEventListener('click', init);
+console.log(resetBtn);
 
 
 /*----- classes -----*/
@@ -100,19 +99,12 @@ class ChooseWiselyGame {
 //the click is mostly just changing the values in the object
 //the change from false to true changes it in the render process. I think.
 resolveClick() {
-  if (clickedSquare.isMine === true) { 
-     console.log("you're dead"); return;
-  }
-   else if 
+  if (clickedSquare.isFlagged === true || clickedSquare.isRevealed === true) {
+    return;
+  }  else if 
     (clickedSquare.isFlagged === false && clickedSquare.isRevealed === false) {
       clickedSquare.isRevealed = true; 
   } 
-  if(clickedSquare.isRevealed === true && clickedSquare.adjMineCount !== 0) {
-    // console.log("document.getElementById(innerHTML = `${clickedSquare.adjMineCount.value}`)")
-  } else {
-    clickedSquare.isRevealed = true; 
-  }
-  
 }
 
   play() {
@@ -132,13 +124,13 @@ resolveClick() {
     board.forEach(function(rowArr, rowIdx) {
       rowArr.forEach(function(square, colIdx) {
         let cellEl = document.getElementById(`r${rowIdx} c${colIdx}`)
-        if (square.isMine === true) {
+        if (square.isMine === true && square.isRevealed === true) {
+          cellEl.style.backgroundColor = 'blue';
 
-        } else if (square.isRevealed === true) {
+        } else if (square.isRevealed === true && square.isMine === false) {
 
           cellEl.style.backgroundColor = 'red';
-          // cellEl.style.backgroundColor = Square.renderLookup[square.value];
-          
+          //flood();
         }
         
       });
@@ -214,3 +206,5 @@ resolveClick() {
     
     // }
     // }
+
+ 
