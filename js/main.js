@@ -62,9 +62,12 @@ class ChooseWiselyGame {
       if (idx === -1 || this.squares[idx].value || this.winner) return;
       this.squares[idx].value = this.turn;  
       this.turn += 1;
-      const clickCol = parseInt(evt.target.id.slice(1, 3));
-      const clickRow = parseInt(evt.target.id.slice(5, 7));
-      clickedSquare = board[clickRow][clickCol];
+
+      let evtSplit = evt.target.id.split(" ");
+      let rowIdx = evtSplit[0].replace("r", "");
+      let colIdx = evtSplit[1].replace("c", "");
+      clickedSquare = board[rowIdx][colIdx];
+      
      if(clickedSquare.isFlagged === false) {
       clickedSquare.isFlagged = true;
      } else {clickedSquare.isFlagged = false};
@@ -75,9 +78,10 @@ class ChooseWiselyGame {
       if (idx === -1 || this.squares[idx].value || this.winner) return;
       this.squares[idx].value = this.turn;  
       this.turn += 1;
-      const clickCol = parseInt(evt.target.id.slice(1, 3));
-      const clickRow = parseInt(evt.target.id.slice(5, 7));
-      clickedSquare = board[clickRow][clickCol];
+      let evtSplit = evt.target.id.split(" ");
+      let rowIdx = evtSplit[0].replace("r", "");
+      let colIdx = evtSplit[1].replace("c", "");
+      clickedSquare = board[rowIdx][colIdx];
 
 
       this.resolveClick();
