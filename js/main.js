@@ -121,13 +121,14 @@ resolveClick() {
     
   render() {
     this.squares.forEach(square => square.render());
-  //   for (let rowIdx = 0; rowIdx < BOARD_ROWS; rowIdx++) {
-  //     for (let colIdx = 0; colIdx < BOARD_COLS; colIdx++) {
-  //       //check the value of isFlagged, isMine, isRevealed
-  //       //change board accordingling and updated message. 
-  //       // console.log(cell)
-  //     }
-  //   }
+
+    board.forEach(function(rowArr, rowIdx) {
+      rowArr.forEach(function(cell, colIdx) {
+        if (cell.isRevealed) {
+          cell.style.backgroundColor = 'black';
+        }
+      });
+    });
       
     }
   }
