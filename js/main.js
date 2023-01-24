@@ -4,6 +4,7 @@ const BOARD_COLS = 10;
 const MINE_PCT = 20;
 
 
+
 /*----- app's state (variables) -----*/
 let game;
 let board;
@@ -16,6 +17,8 @@ const boardEl = document.getElementById('board');
 const msgEl = document.getElementById('message');
 document.querySelector('button')
 .addEventListener('click', init);
+
+
 
 /*----- classes -----*/
 // class Cell {
@@ -44,7 +47,7 @@ class Square {
     'null': 'darkgrey' //isRevealed = false
   }
   render() {
-    // this.domElement.style.backgroundColor = Square.renderLookup[this.value];
+    this.domElement.style.backgroundColor = Square.renderLookup[this.value];
 
   }
 }
@@ -61,17 +64,17 @@ class ChooseWiselyGame {
       const idx = this.squareEls.indexOf(evt.target);
       if (idx === -1 || this.squares[idx].value || this.winner) return;
       this.squares[idx].value = this.turn;  
-      this.turn += 1;
+      // this.turn += 1;
 
       let evtSplit = evt.target.id.split(" ");
       let rowIdx = evtSplit[0].replace("r", "");
       let colIdx = evtSplit[1].replace("c", "");
       clickedSquare = board[rowIdx][colIdx];
       
-     if(clickedSquare.isFlagged === false) {
-      clickedSquare.isFlagged = true;
-     } else {clickedSquare.isFlagged = false};
-  });
+      if(clickedSquare.isFlagged === false) {
+        clickedSquare.isFlagged = true;
+       } else {clickedSquare.isFlagged = false};
+    });
 //left click
     this.boardElement.addEventListener('click', (evt) => {
       const idx = this.squareEls.indexOf(evt.target);
@@ -130,9 +133,12 @@ resolveClick() {
       rowArr.forEach(function(square, colIdx) {
         let cellEl = document.getElementById(`r${rowIdx} c${colIdx}`)
         if (square.isMine === true) {
+
         } else if (square.isRevealed === true) {
+
           cellEl.style.backgroundColor = 'red';
-          console.log('cellEl');
+          // cellEl.style.backgroundColor = Square.renderLookup[square.value];
+          
         }
         
       });
@@ -146,65 +152,65 @@ resolveClick() {
     /*----- functions -----*/
     
     
-  init();
+    init();
 
-function init() {
-  board = [];
-  for (let rowIdx = 0; rowIdx < BOARD_ROWS; rowIdx++) {
-    board[rowIdx] = [];
-    for (let colIdx = 0; colIdx < BOARD_COLS; colIdx++) {
-      board[rowIdx].push({
-        isMine: Math.random() < (MINE_PCT / 100),
-        isRevealed: false,
-        isFlagged: false,
-        adjMineCount: null,  
-        rowIdx,
-        colIdx
-      });
+    function init() {
+      board = [];
+      for (let rowIdx = 0; rowIdx < BOARD_ROWS; rowIdx++) {
+        board[rowIdx] = [];
+        for (let colIdx = 0; colIdx < BOARD_COLS; colIdx++) {
+          board[rowIdx].push({
+            isMine: Math.random() < (MINE_PCT / 100),
+            isRevealed: false,
+            isFlagged: false,
+            adjMineCount: null,  
+            rowIdx,
+            colIdx
+          });
+        }
+      }
+      
+      for (let rowIdx = 0; rowIdx < BOARD_ROWS; rowIdx++) {
+        for (let colIdx = 0; colIdx < BOARD_COLS; colIdx++) {
+          const cell = board[rowIdx][colIdx];
+          cell.neighbors = getNeighbors(cell);
+          cell.adjMineCount = cell.neighbors.reduce((count, cell) => cell.isMine ? count + 1 : count, 0);
+          // console.log(cell)
+        }
+      }
     }
-  }
-  
-  for (let rowIdx = 0; rowIdx < BOARD_ROWS; rowIdx++) {
-    for (let colIdx = 0; colIdx < BOARD_COLS; colIdx++) {
-      const cell = board[rowIdx][colIdx];
-      cell.neighbors = getNeighbors(cell);
-      cell.adjMineCount = cell.neighbors.reduce((count, cell) => cell.isMine ? count + 1 : count, 0);
-      // console.log(cell)
+    
+    function getNeighbors(cell) {
+      const neighbors = [];
+      for (let rowOffset = -1; rowOffset < 2; rowOffset++) {
+        for (let colOffset = -1; colOffset < 2; colOffset++) {
+          const rowIdx = cell.rowIdx + rowOffset;
+          const colIdx = cell.colIdx + colOffset;
+          if (
+            !(rowIdx === cell.rowIdx && colIdx === cell.colIdx) &&
+            rowIdx >= 0 && rowIdx < board.length &&
+            colIdx >= 0 && colIdx < board[0].length
+          ) neighbors.push(board[rowIdx][colIdx]);
+        }
+      }
+      return neighbors;
     }
-  }
-}
-
-function getNeighbors(cell) {
-  const neighbors = [];
-  for (let rowOffset = -1; rowOffset < 2; rowOffset++) {
-    for (let colOffset = -1; colOffset < 2; colOffset++) {
-      const rowIdx = cell.rowIdx + rowOffset;
-      const colIdx = cell.colIdx + colOffset;
-      if (
-        !(rowIdx === cell.rowIdx && colIdx === cell.colIdx) &&
-        rowIdx >= 0 && rowIdx < board.length &&
-        colIdx >= 0 && colIdx < board[0].length
-      ) neighbors.push(board[rowIdx][colIdx]);
+    
+    
+     
+    
+    initialize();
+    
+    function initialize() {
+      game = new ChooseWiselyGame(boardEl, msgEl);
+      game.play();
+    
     }
-  }
-  return neighbors;
-}
-
-
- 
-
-initialize();
-
-function initialize() {
-  game = new ChooseWiselyGame(boardEl, msgEl);
-  game.play();
-
-}
-
-//flood() {
-// let (i = 0: i < neighbors.array; i++) {
-//   if (.isFlagged === false && isMine === false) {
-//     .isRevealed = true;
-
-// }
-// }
+    
+    //flood() {
+    // let (i = 0: i < neighbors.array; i++) {
+    //   if (.isFlagged === false && isMine === false) {
+    //     .isRevealed = true;
+    
+    // }
+    // }
