@@ -9,9 +9,7 @@ let game;
 let board;
 let turn;
 let clickedCell;
-let boardArrayThing = []; //delete eventually
-let newBoard; //delete eventually
-// let cells; //maybe
+
 
 /*----- cached element references -----*/
 const boardEl = document.getElementById('board');
@@ -24,13 +22,14 @@ class Square {
   constructor(domElement) {
     this.domElement = domElement;
     this.value = null;
+    
   }
 
 
   static renderLookup = {
-    '1': 'blue',
-    '-1': 'red',
-    'null': 'darkgrey'
+    '1': 'blue', //is bomb = true isrevealed =true
+    '-1': 'red', //isBomb = false isRevealed = true
+    'null': 'darkgrey' //isRevealed = false
   }
   render() {
     this.domElement.style.backgroundColor = Square.renderLookup[this.value];
@@ -73,10 +72,12 @@ class ChooseWiselyGame {
       
     });
   }
-
+//the click is mostly just changing the values in the object
+//the change from false to true changes it in the render process. I think.
 resolveClick() {
-  if(clickedCell.isMine === false) {
-    document.idx.style.backgroundColor = 'black';
+  if(clickedCell.isFlagged === false && clickedCell.isRevealed === false) {
+    { }
+      
   } 
 }
 
