@@ -8,7 +8,7 @@ const MINE_PCT = 20;
 let game;
 let board;
 let turn;
-let clickedCell;
+let clickedSquare;
 
 
 /*----- cached element references -----*/
@@ -18,6 +18,18 @@ document.querySelector('button')
 .addEventListener('click', init);
 
 /*----- classes -----*/
+// class Cell {
+//   constructor(domElement) {
+//   isMine = Math.random() < (MINE_PCT / 100),
+//   isRevealed = false,
+//   isFlagged = false,
+//   adjMineCount = null,  
+//   rowIdx,
+//   colIdx,
+// }
+
+// }
+
 class Square {
   constructor(domElement) {
     this.domElement = domElement;
@@ -37,25 +49,13 @@ class Square {
   }
 }
 
-// class Cell {
-//   constructor(rowIdx, colIdx) {
-//     board[rowIdx].push({ 
-//     this.isMine = Math.random() < (MINE_PCT / 100);
-//     this.isRevealed = false;
-//     isFlagged = false,
-//     adjMineCount = null,  // Compute after mines are determined
-//     rowIdx,
-//     colIdx,
-//   }
-// }
-// }
-
 class ChooseWiselyGame {
   constructor(boardElement, messageElement) {
     this.boardElement = boardElement;
     this.messageElement = messageElement;
 
     this.squareEls = [...boardElement.querySelectorAll('div')];
+
 //right click
     this.boardElement.addEventListener('contextmenu', (evt) => {
       const idx = this.squareEls.indexOf(evt.target);
@@ -64,10 +64,10 @@ class ChooseWiselyGame {
       this.turn += 1;
       const clickCol = parseInt(evt.target.id.slice(1, 3));
       const clickRow = parseInt(evt.target.id.slice(5, 7));
-      clickedCell = board[clickRow][clickCol];
-     if(clickedCell.isFlagged === false) {
-      clickedCell.isFlagged = true;
-     } else {clickedCell.isFlagged = false};
+      clickedSquare = board[clickRow][clickCol];
+     if(clickedSquare.isFlagged === false) {
+      clickedSquare.isFlagged = true;
+     } else {clickedSquare.isFlagged = false};
   });
 //left click
     this.boardElement.addEventListener('click', (evt) => {
@@ -77,13 +77,13 @@ class ChooseWiselyGame {
       this.turn += 1;
       const clickCol = parseInt(evt.target.id.slice(1, 3));
       const clickRow = parseInt(evt.target.id.slice(5, 7));
-      clickedCell = board[clickRow][clickCol];
+      clickedSquare = board[clickRow][clickCol];
 
 
       this.resolveClick();
 
       this.winner = this.getWinner();
-      console.log(clickedCell);
+      console.log(clickedSquare);
       // console.log(evt.targ);
 
       this.render();
@@ -93,15 +93,15 @@ class ChooseWiselyGame {
 //the click is mostly just changing the values in the object
 //the change from false to true changes it in the render process. I think.
 resolveClick() {
-  if (clickedCell.isMine === true) { 
+  if (clickedSquare.isMine === true) { 
      console.log("you're dead"); return;
   }
    else if 
-    (clickedCell.isFlagged === false && clickedCell.isRevealed === false) {
-      clickedCell.isRevealed = true; 
+    (clickedSquare.isFlagged === false && clickedSquare.isRevealed === false) {
+      clickedSquare.isRevealed = true; 
   } 
-  if(clickedCell.isRevealed === true) {
-    console.log("document.getElementById(innerHTML = `${clickedCell.adjMineCount.value}`)")
+  if(clickedSquare.isRevealed === true) {
+    console.log("document.getElementById(innerHTML = `${clickedSquare.adjMineCount.value}`)")
   } else {
     console.log("reveal blank square");
   }
@@ -123,10 +123,14 @@ resolveClick() {
     this.squares.forEach(square => square.render());
 
     board.forEach(function(rowArr, rowIdx) {
-      rowArr.forEach(function(cell, colIdx) {
-        if (cell.isRevealed) {
-          cell.style.backgroundColor = 'black';
+      rowArr.forEach(function(square, colIdx) {
+        if (square.isMine === true) {
+          // console.log("boom");
+        } else if (square.isRevealed === true) {
+        document.getElementById() = 'black';
+          console.log('square');
         }
+        
       });
     });
       
