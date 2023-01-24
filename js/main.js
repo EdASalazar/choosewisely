@@ -26,6 +26,7 @@ class Square {
     this.value = null;
   }
 
+
   static renderLookup = {
     '1': 'blue',
     '-1': 'red',
@@ -35,6 +36,19 @@ class Square {
     this.domElement.style.backgroundColor = Square.renderLookup[this.value];
   }
 }
+
+// class Cell {
+//   constructor(rowIdx, colIdx) {
+//     board[rowIdx].push({ 
+//     this.isMine = Math.random() < (MINE_PCT / 100);
+//     this.isRevealed = false;
+//     isFlagged = false,
+//     adjMineCount = null,  // Compute after mines are determined
+//     rowIdx,
+//     colIdx,
+//   }
+// }
+// }
 
 class ChooseWiselyGame {
   constructor(boardElement, messageElement) {
@@ -52,20 +66,17 @@ class ChooseWiselyGame {
       // this.resolveClick();
       this.winner = this.getWinner();
       
-
-
-     
-      console.log(clickedCell.isMine);
+      // console.log(clickedCell.isMine);
       // if (clickedCell.isMine === true){
       //   loss === true;
       //   render
       // } else if {  }
- 
 
       this.render();
       
     });
   }
+
   play() {
     // this.turn = 1; //may not be necessary
     this.winner = null;
@@ -81,14 +92,6 @@ class ChooseWiselyGame {
     this.squares.forEach(square => square.render());
       
     }
-    
-  // resolveClick() {
-  //   if (clickedCell.isMine === true){
-  //     console.log(dead);
-  //   };
-  // }
-    
-    
   }
   
 
@@ -96,50 +99,52 @@ class ChooseWiselyGame {
     /*----- functions -----*/
     
     
-    init();
-    function init() {
-      board = [];
-      for (let rowIdx = 0; rowIdx < BOARD_ROWS; rowIdx++) {
-        board[rowIdx] = [];
-        for (let colIdx = 0; colIdx < BOARD_COLS; colIdx++) {
-          board[rowIdx].push({ //could switch the below into an object. 
-            isMine: Math.random() < (MINE_PCT / 100),
+  init();
+
+function init() {
+  board = [];
+  for (let rowIdx = 0; rowIdx < BOARD_ROWS; rowIdx++) {
+    board[rowIdx] = [];
+    for (let colIdx = 0; colIdx < BOARD_COLS; colIdx++) {
+      board[rowIdx].push({
+        isMine: Math.random() < (MINE_PCT / 100),
         isRevealed: false,
         isFlagged: false,
-        adjMineCount: null,  // Compute after mines are determined
+        adjMineCount: null,  
         rowIdx,
-        colIdx,
-      
+        colIdx
       });
     }
-    for (let rowIdx=0; rowIdx < BOARD_ROWS; rowIdx++) {
-      for (let colIdx =0; colIdx < BOARD_COLS; colIdx++){
-        const cell = board[rowIdx][colIdx];
-        cell.neighbors = getNeighbors(cell);
-        cell.adjMineCount = cell.neighbors.reduce((count, cell) => cell.isMine ? count +1 : count, 0);
-      }
-    }
-
   }
-
-  function getNeighbors(cell) {
-    const neighbors = [];
-    for (let rowOffset = -1; rowOffset < 2; rowOffset++) {
-      for (let colOffset = -1; colOffset < 2; colOffset++) {
-        const rowIdx = cell.rowIdx + rowOffset;
-        const colIdx = cell.colIdx + colOffset;
-        if (
-          !(rowIdx === cell.rowIdx && colIdx === cell.colIdx) &&
-          rowIdx >= 0 && rowIdx < board.length &&
-          colIdx >= 0 && colIdx < board[0].length
-        ) neighbors.push(board[rowIdx][colIdx]);
-      }
+  
+  for (let rowIdx = 0; rowIdx < BOARD_ROWS; rowIdx++) {
+    for (let colIdx = 0; colIdx < BOARD_COLS; colIdx++) {
+      const cell = board[rowIdx][colIdx];
+      cell.neighbors = getNeighbors(cell);
+      cell.adjMineCount = cell.neighbors.reduce((count, cell) => cell.isMine ? count + 1 : count, 0);
+      console.log(cell)
     }
-    return neighbors;
   }
-console.log(boardArrayThing);
+}
 
- }
+function getNeighbors(cell) {
+  const neighbors = [];
+  for (let rowOffset = -1; rowOffset < 2; rowOffset++) {
+    for (let colOffset = -1; colOffset < 2; colOffset++) {
+      const rowIdx = cell.rowIdx + rowOffset;
+      const colIdx = cell.colIdx + colOffset;
+      if (
+        !(rowIdx === cell.rowIdx && colIdx === cell.colIdx) &&
+        rowIdx >= 0 && rowIdx < board.length &&
+        colIdx >= 0 && colIdx < board[0].length
+      ) neighbors.push(board[rowIdx][colIdx]);
+    }
+  }
+  return neighbors;
+}
+
+
+ 
 
 initialize();
 
