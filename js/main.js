@@ -46,7 +46,7 @@ class Square {
     'null': 'darkgrey' //isRevealed = false
   }
   render() {
-    this.domElement.style.backgroundColor = Square.renderLookup[this.value];
+    // this.domElement.style.backgroundColor = Square.renderLookup[this.value];
 
   }
 }
@@ -101,7 +101,6 @@ class ChooseWiselyGame {
 //the change from false to true changes it in the render process. I think.
 resolveClick() {
   if (clickedSquare.isFlagged === true || clickedSquare.isRevealed === true) {
-    getElementById('r0c7').classList.add('revealedMine'); return;
   }  else if 
     (clickedSquare.isFlagged === false && clickedSquare.isRevealed === false) {
       clickedSquare.isRevealed = true; 
@@ -124,21 +123,24 @@ resolveClick() {
 
     board.forEach(function(rowArr, rowIdx) {
       rowArr.forEach(function(square, colIdx) {
-        let cellEl = document.getElementById(`r${rowIdx} c${colIdx}`)
-        if (square.isMine === true && square.isRevealed === true) {
-          cellEl.classList.add('revealedMine');
+        let cellEl = document.getElementById(`r${rowIdx} c${colIdx}`) 
+          if (square.isFlagged === true) {
+            cellEl.classList.add('flagged');
+          } else if (square.isMine === true && square.isRevealed === true) {
+          cellEl.classList.add('revealed-mine');
 
         } else if (square.isRevealed === true && square.isMine === false) {
-
-          cellEl.style.backgroundColor = 'red';
+          cellEl.classList.add('revealed');
+          // cellEl.style.backgroundColor = 'red';
           //flood();
         }
-        // console.log(cellEl);
+        console.log(cellEl);
       });
-    });
       
+    })
+  
     }
-  }
+}
   
 
     

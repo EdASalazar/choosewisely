@@ -37,3 +37,12 @@ header {
 #button {
   padding-top: 2vh;
 }
+
+.background-color {
+  background-color: red;
+}
+
+.revealed-mine {
+
+  background-color: blue;
+}
