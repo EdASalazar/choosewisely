@@ -15,8 +15,8 @@ let clickedSquare;
 /*----- cached element references -----*/
 const boardEl = document.getElementById('board');
 const msgEl = document.getElementById('message');
-const resetBtn = document.querySelector('button').addEventListener('click', init);
-console.log(resetBtn);
+// const resetBtn = document.querySelector('button').addEventListener('click', init);
+// console.log(resetBtn);
 
 
 /*----- classes -----*/
@@ -87,7 +87,8 @@ class ChooseWiselyGame {
 
 
       this.resolveClick();
-
+   
+      
       this.winner = this.getWinner();
       console.log(clickedSquare);
       // console.log(evt.targ);
@@ -100,7 +101,7 @@ class ChooseWiselyGame {
 //the change from false to true changes it in the render process. I think.
 resolveClick() {
   if (clickedSquare.isFlagged === true || clickedSquare.isRevealed === true) {
-    return;
+    getElementById('r0c7').classList.add('revealedMine'); return;
   }  else if 
     (clickedSquare.isFlagged === false && clickedSquare.isRevealed === false) {
       clickedSquare.isRevealed = true; 
@@ -125,14 +126,14 @@ resolveClick() {
       rowArr.forEach(function(square, colIdx) {
         let cellEl = document.getElementById(`r${rowIdx} c${colIdx}`)
         if (square.isMine === true && square.isRevealed === true) {
-          cellEl.style.backgroundColor = 'blue';
+          cellEl.classList.add('revealedMine');
 
         } else if (square.isRevealed === true && square.isMine === false) {
 
           cellEl.style.backgroundColor = 'red';
           //flood();
         }
-        
+        // console.log(cellEl);
       });
     });
       
