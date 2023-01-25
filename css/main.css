@@ -10,9 +10,10 @@ body {
   flex-direction: column;
   justify-self: center;
   align-items: center;
-  background-color: tan;
+  /* background-color: tan; */
   color: orange;
   text-shadow: #000 0px 0px 2px;
+  background-image: url("images/Ext_temple.jpg");
 }
 
 header {
