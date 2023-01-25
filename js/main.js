@@ -133,6 +133,8 @@ render() {
           const cell = board[rowIdx][colIdx];
           cell.neighbors = getNeighbors(cell);
           cell.adjMineCount = cell.neighbors.reduce((count, cell) => cell.isMine ? count + 1 : count, 0);
+          document.getElementById(`r${rowIdx} c${colIdx}`).innerHTML = `${cell.adjMineCount}`;
+          
 
         }
       }
@@ -153,16 +155,6 @@ render() {
       }
       return neighbors;
     }
-function adjMineText(){
-//iterate thought the array. 
-//get the adjMineCount 
-// put that number in the innerText
-
-
-}    
-
-
-
 
   initialize();
     
