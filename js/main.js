@@ -61,9 +61,9 @@ class ChooseWiselyGame {
 //right click
     this.boardElement.addEventListener('contextmenu', (evt) => {
       const idx = this.squareEls.indexOf(evt.target);
-      if (idx === -1 || this.squares[idx].value || this.winner) return;
-      this.squares[idx].value = this.turn;  
-      // this.turn += 1;
+      if (idx === -1) return;
+      // this.squares[idx].value = this.turn;  
+      this.turn += 1;
 
       let evtSplit = evt.target.id.split(" ");
       let rowIdx = evtSplit[0].replace("r", "");
@@ -72,7 +72,10 @@ class ChooseWiselyGame {
       
       if(clickedSquare.isFlagged === false) {
         clickedSquare.isFlagged = true;
-       } else {clickedSquare.isFlagged = false};
+       } else if (clickedSquare.isFlagged = true) {
+        clickedSquare.isFlagged = false;
+       }
+        ;
     });
 //left click
     this.boardElement.addEventListener('click', (evt) => {
