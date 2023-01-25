@@ -15,9 +15,7 @@ body {
   background-color: rgb(206, 170, 151);
   background-repeat: no-repeat;
   background-size: cover;
-  color: rgba(0, 0, 0, 0.0)
-  text-shadow: black 1px 1px 2px;
-  text-align: center;
+  color: rgba(255, 255, 255, 0)
 }
 
 
@@ -47,9 +45,9 @@ h1 {
 }
 
 #board > div {
+  text-align: center;
   height: 4vh;
   width: 4vh;
-  /* background-color: #8796A9; */
   border: 1.5px solid lightgrey;
   border-radius: 10%;
   min-height: 8vh;
@@ -64,14 +62,16 @@ h1 {
 
 .revealed {
   background-color: rgb(205, 45, 45);
+  color: orange;
+  text-shadow: black 1px 1px 2px;
+  text-align: center;
 }
+
 
 .revealed-mine {
 
   background-color: rgb(51, 51, 174);
-  color: orange;
-  text-shadow: black 1px 1px 2px;
-  text-align: center;
+  color: rgba(255, 255, 255, 0);  
 }
 
 
@@ -79,9 +79,8 @@ h1 {
 .flagged {
 
   background-color: plum;
-  color:  orange;
-  text-shadow: black 1px 1px 2px;
-  text-align: center;
+  color: rgba(255, 255, 255, 0)
+  
 }
   
 
