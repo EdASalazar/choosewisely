@@ -74,8 +74,8 @@ class ChooseWiselyGame {
         clickedSquare.isFlagged = true;
        } else if (clickedSquare.isFlagged = true) {
         clickedSquare.isFlagged = false;
-       }
-        ;
+       };
+       this.render();
     });
 //left click
     this.boardElement.addEventListener('click', (evt) => {
