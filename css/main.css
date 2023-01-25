@@ -6,15 +6,18 @@
 body {
   height: 100vh;
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'MedievalSharp', cursive;
   display: flex;
   flex-direction: column;
   justify-self: center;
   align-items: center;
   /* background-color: tan; */
-  color: orange;
-  text-shadow: #000 0px 0px 2px;
+  color: rgb(176, 52, 58);
+  text-shadow: lightsalmon 1px 1px 3px;
   background-image: url("https://www.movie-locations.com/movies/i/Indiana-Jones-And-The-Last-Crusade-Petra-Treasury.jpg");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center center;
 }
 
 header {
@@ -28,16 +31,19 @@ h1 {
 #board {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  background-color: grey;
+  background-color: white;
   border-radius: 1vmin;
   background-image: url("/images/templar_circle.jpg");
+  background-repeat: no-repeat;
+  background-size:     cover; 
+  background-position: center center;
 }
 
 #board > div {
   height: 4vh;
   width: 4vh;
   /* background-color: #8796A9; */
-  border: 1px solid black;
+  border: 1px solid grey;
   border-radius: 10%;
 
 }
@@ -53,9 +59,16 @@ h1 {
 .revealed-mine {
 
   background-color: blue;
+  /* background-image: url("images/hat_drawing.png"); */
 }
 
 .flagged {
   /* background-image: url("images/hat_drawing.png"); */
-  background-color: plum
+  /* background-color: plum */
+  background-image: url("images/hat_drawing.png");
+  
+}
+
+button {
+
 }
