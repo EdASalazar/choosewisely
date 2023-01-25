@@ -153,7 +153,13 @@ render() {
       }
       return neighbors;
     }
-function adjMineText(){}    
+function adjMineText(){
+//iterate thought the array. 
+//get the adjMineCount 
+// put that number in the innerText
+
+
+}    
 
 
 
