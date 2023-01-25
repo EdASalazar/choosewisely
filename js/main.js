@@ -78,7 +78,6 @@ resolveClick() {
   }  else if 
     (clickedSquare.isFlagged === false && clickedSquare.isRevealed === false) {
       clickedSquare.isRevealed = true; 
-      console.log(clickedSquare.neighbors[0]);
       theFlood();
   }
 }
@@ -176,9 +175,10 @@ function endGame() {
   }
 }
 
-function theFlood() {
-  if (clickedSquare.neighbors !== null) {
-
+function theFlood(clickedSquare) {
+      for (let i =0; i < clickedSquare.neighbors.length; i++) {
+        console.log(clickedSquare.neighbors[i]);
+      // }
   }
 }
 
