@@ -153,7 +153,11 @@ render() {
       }
       return neighbors;
     }
-    
+function adjMineText(){}    
+
+
+
+
   initialize();
     
     function initialize() {
