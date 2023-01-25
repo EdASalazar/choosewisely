@@ -15,7 +15,7 @@ let clickedSquare;
 /*----- cached element references -----*/
 const boardEl = document.getElementById('board');
 const msgEl = document.getElementById('message');
-// const resetBtn = document.querySelector('button').addEventListener('click', init);
+const resetBtn = document.querySelector('button').addEventListener('click', init);
 // console.log(resetBtn);
 
 
@@ -57,7 +57,6 @@ class ChooseWiselyGame {
     this.messageElement = messageElement;
 
     this.squareEls = [...boardElement.querySelectorAll('div')];
-
 //right click
     this.boardElement.addEventListener('contextmenu', (evt) => {
       const idx = this.squareEls.indexOf(evt.target);
@@ -87,12 +86,9 @@ class ChooseWiselyGame {
       let rowIdx = evtSplit[0].replace("r", "");
       let colIdx = evtSplit[1].replace("c", "");
       clickedSquare = board[rowIdx][colIdx];
-
-
       this.resolveClick();
    
-      
-      this.winner = this.getWinner();
+      // this.winner = this.getWinner();
       console.log(clickedSquare);
       // console.log(evt.targ);
 
@@ -194,10 +190,7 @@ resolveClick() {
       return neighbors;
     }
     
-    
-     
-    
-    initialize();
+  initialize();
     
     function initialize() {
       game = new ChooseWiselyGame(boardEl, msgEl);
@@ -205,12 +198,4 @@ resolveClick() {
     
     }
     
-    //flood() {
-    // let (i = 0: i < neighbors.array; i++) {
-    //   if (.isFlagged === false && isMine === false) {
-    //     .isRevealed = true;
-    
-    // }
-    // }
-
  
