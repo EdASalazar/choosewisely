@@ -13,7 +13,7 @@ body {
   align-items: center;
   /* background-color: tan; */
   color: rgb(176, 52, 58);
-  text-shadow: lightsalmon 1px 1px 3px;
+  text-shadow: white 1px 1px 2px;
   background-image: url("https://www.theartistree.fm/wp-content/uploads/2021/09/Indiana-Jones-3.jpg");
   background-color: rgb(206, 170, 151);
   background-repeat: no-repeat;
@@ -31,8 +31,8 @@ img {
 header {
   font-size: 7vh;
   margin-top: 5vh;
-  /* font-family: 'Lato', sans-serif; */
 }
+
 h1 {
   margin: 0 auto;
 }
