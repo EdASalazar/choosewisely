@@ -70,5 +70,7 @@ h1 {
 }
 
 button {
-
+ background-color: grey;
+ border-radius: 30%;
+ padding: 1em;
 }
