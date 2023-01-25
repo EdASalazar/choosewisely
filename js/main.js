@@ -1,7 +1,7 @@
 /*----- constants -----*/
 const BOARD_ROWS = 10;
 const BOARD_COLS = 10;
-const MINE_PCT = 20;
+const MINE_PCT = 5; //change back to 20 before deploy
 
 
 
@@ -10,7 +10,7 @@ let game;
 let board;
 let turn;
 let clickedSquare;
-
+let currentNeighbor;
 
 /*----- cached element references -----*/
 const boardEl = document.getElementById('board');
@@ -78,7 +78,20 @@ resolveClick() {
   }  else if 
     (clickedSquare.isFlagged === false && clickedSquare.isRevealed === false) {
       clickedSquare.isRevealed = true; 
-      theFlood();
+      // theFlood();
+      for (let i = 0; i < clickedSquare.neighbors.length; i++) {
+          currentNeighbor = clickedSquare.neighbors[i];
+          if (currentNeighbor.isRevealed === false && currentNeighbor.isMine === false) {
+             currentNeighbor.isFlagged === false;
+             currentNeighbor.isRevealed === true;
+          }
+
+        // console.log(clickedSquare.neighbors[i])
+        // console.log(currentNeighbor)
+        console.log(currentNeighbor.isFlagged)
+       
+      }
+      
   }
 }
 //endGame();
@@ -141,8 +154,8 @@ render() {
       }
     }
     
-    function getNeighbors(cell) {
-      const neighbors = [];
+  function getNeighbors(cell) {
+    const neighbors = [];
       for (let rowOffset = -1; rowOffset < 2; rowOffset++) {
         for (let colOffset = -1; colOffset < 2; colOffset++) {
           const rowIdx = cell.rowIdx + rowOffset;
@@ -175,12 +188,12 @@ function endGame() {
   }
 }
 
-function theFlood(clickedSquare) {
-      for (let i =0; i < clickedSquare.neighbors.length; i++) {
-        console.log(clickedSquare.neighbors[i]);
-      // }
-  }
-}
+// function theFlood(clickedSquare.neighbors) {
+//       for (let i =0; i < clickedSquare.neighbors.length; i++) {
+//        return console.log(clickedSquare.neighbors[0]);
+        
+//       }
+//     }
 
 // console.log(clickedSquare.neighbors[0]);
  
