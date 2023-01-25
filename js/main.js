@@ -125,20 +125,29 @@ resolveClick() {
         let cellEl = document.getElementById(`r${rowIdx} c${colIdx}`) 
           if (square.isFlagged === true) {
             cellEl.classList.add('flagged');
-          } else if (square.isMine === true && square.isRevealed === true) {
+          } else if (square.isFlagged === false) {
+            cellEl.classList.remove('flagged');
+           if (square.isMine === true && square.isRevealed === true) {
           cellEl.classList.add('revealed-mine');
+          document.h1.innerHTML = "You Chose Poorly";
 
         } else if (square.isRevealed === true && square.isMine === false) {
           cellEl.classList.add('revealed');
           // cellEl.style.backgroundColor = 'red';
           //flood();
         }
+      }
+
+    
         console.log(cellEl);
       });
       
     })
   
     }
+
+
+
 }
   
 
@@ -162,14 +171,14 @@ resolveClick() {
             colIdx
           });
         }
-      }
-      
+      } 
+
       for (let rowIdx = 0; rowIdx < BOARD_ROWS; rowIdx++) {
         for (let colIdx = 0; colIdx < BOARD_COLS; colIdx++) {
           const cell = board[rowIdx][colIdx];
           cell.neighbors = getNeighbors(cell);
           cell.adjMineCount = cell.neighbors.reduce((count, cell) => cell.isMine ? count + 1 : count, 0);
-          // console.log(cell)
+
         }
       }
     }
@@ -197,5 +206,7 @@ resolveClick() {
       game.play();
     
     }
+
+   
     
  
