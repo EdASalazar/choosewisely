@@ -20,17 +20,6 @@ const resetBtn = document.querySelector('button').addEventListener('click', init
 
 
 /*----- classes -----*/
-// class Cell {
-//   constructor(domElement) {
-//   isMine = Math.random() < (MINE_PCT / 100),
-//   isRevealed = false,
-//   isFlagged = false,
-//   adjMineCount = null,  
-//   rowIdx,
-//   colIdx,
-// }
-
-// }
 
 class Square {
   constructor(domElement) {
@@ -39,16 +28,7 @@ class Square {
     
   }
 
-
-  static renderLookup = {
-    '1': 'blue', //is bomb = true isrevealed =true
-    '-1': 'red', //isBomb = false isRevealed = true
-    'null': 'darkgrey' //isRevealed = false
-  }
-  render() {
-    // this.domElement.style.backgroundColor = Square.renderLookup[this.value];
-
-  }
+  render() {} 
 }
 
 class ChooseWiselyGame {
@@ -61,7 +41,6 @@ class ChooseWiselyGame {
     this.boardElement.addEventListener('contextmenu', (evt) => {
       const idx = this.squareEls.indexOf(evt.target);
       if (idx === -1) return;
-      // this.squares[idx].value = this.turn;  
       this.turn += 1;
 
       let evtSplit = evt.target.id.split(" ");
@@ -79,25 +58,19 @@ class ChooseWiselyGame {
 //left click
     this.boardElement.addEventListener('click', (evt) => {
       const idx = this.squareEls.indexOf(evt.target);
-      if (idx === -1 || this.squares[idx].value || this.winner) return;
-      this.squares[idx].value = this.turn;  
+      if (idx === -1) return; 
       this.turn += 1;
       let evtSplit = evt.target.id.split(" ");
       let rowIdx = evtSplit[0].replace("r", "");
       let colIdx = evtSplit[1].replace("c", "");
       clickedSquare = board[rowIdx][colIdx];
       this.resolveClick();
-   
-      // this.winner = this.getWinner();
-      console.log(clickedSquare);
-      // console.log(evt.targ);
-
       this.render();
       
     });
   }
-//the click is mostly just changing the values in the object
-//the change from false to true changes it in the render process. I think.
+
+  
 resolveClick() {
   if (clickedSquare.isFlagged === true || clickedSquare.isRevealed === true) {
   }  else if 
@@ -107,53 +80,34 @@ resolveClick() {
 }
 
   play() {
-    // this.turn = 1; //may not be necessary
-    this.winner = null;
     this.squares = this.squareEls.map(el => new Square(el));
     this.render();
   }
-  
-  getWinner() {
- 
-    }
-    
-  render() {
-    this.squares.forEach(square => square.render());
-
-    board.forEach(function(rowArr, rowIdx) {
-      rowArr.forEach(function(square, colIdx) {
-        let cellEl = document.getElementById(`r${rowIdx} c${colIdx}`) 
-          if (square.isFlagged === true) {
-            cellEl.classList.add('flagged');
-          } else if (square.isFlagged === false) {
-            cellEl.classList.remove('flagged');
-           if (square.isMine === true && square.isRevealed === true) {
-          cellEl.classList.add('revealed-mine');
-          document.h1.innerHTML = "You Chose Poorly";
-
-        } else if (square.isRevealed === true && square.isMine === false) {
-          cellEl.classList.add('revealed');
-          // cellEl.style.backgroundColor = 'red';
-          //flood();
-        }
-      }
-
-    
-        console.log(cellEl);
-      });
       
+render() {
+  this.squares.forEach(square => square.render());
+
+  board.forEach(function(rowArr, rowIdx) {
+    rowArr.forEach(function(square, colIdx) {
+      let cellEl = document.getElementById(`r${rowIdx} c${colIdx}`) 
+        if (square.isFlagged === true) {
+          cellEl.classList.add('flagged');
+        } else if (square.isFlagged === false) {
+         cellEl.classList.remove('flagged');
+         if (square.isMine === true && square.isRevealed === true) {
+           cellEl.classList.add('revealed-mine');
+          endGame();
+         } else if (square.isRevealed === true && square.isMine === false) {
+          cellEl.classList.add('revealed');
+
+        }
+      } 
+     }); 
     })
-  
-    }
-
-
-
+   }
 }
-  
-
-    
+      
     /*----- functions -----*/
-    
     
     init();
 
@@ -207,6 +161,15 @@ resolveClick() {
     
     }
 
-   
+function endGame() {
+
+  for (let rowIdx = 0; rowIdx < BOARD_ROWS; rowIdx++) {
+    for (let colIdx = 0; colIdx < BOARD_COLS; colIdx++) {
+      const cell = board[rowIdx][colIdx];
+      cell.isRevealed = true;
+    }
+  }
+}
+
     
  

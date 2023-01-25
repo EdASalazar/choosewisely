@@ -66,12 +66,12 @@ h1 {
 }
 
 .revealed {
-  background-color: red;
+  background-color: rgb(205, 45, 45);
 }
 
 .revealed-mine {
 
-  background-color: blue;
+  background-color: rgb(51, 51, 174);
   /* background-image: url("images/hat_drawing.png"); */
 }
 
