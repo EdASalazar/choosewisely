@@ -72,13 +72,15 @@ class ChooseWiselyGame {
 
   
 resolveClick() {
-  if (clickedSquare.isFlagged === true || clickedSquare.isRevealed === true) {
+  if (clickedSquare.isMine === true) {
+    endGame();
+  } else if (clickedSquare.isFlagged === true || clickedSquare.isRevealed === true) {
   }  else if 
     (clickedSquare.isFlagged === false && clickedSquare.isRevealed === false) {
       clickedSquare.isRevealed = true; 
-  } 
+  }
 }
-
+//endGame();
   play() {
     this.squares = this.squareEls.map(el => new Square(el));
     this.render();
@@ -96,7 +98,6 @@ render() {
          cellEl.classList.remove('flagged');
          if (square.isMine === true && square.isRevealed === true) {
            cellEl.classList.add('revealed-mine');
-          endGame();
          } else if (square.isRevealed === true && square.isMine === false) {
           cellEl.classList.add('revealed');
 
