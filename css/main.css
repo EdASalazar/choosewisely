@@ -38,11 +38,15 @@ header {
   padding-top: 2vh;
 }
 
-.background-color {
+.revealed {
   background-color: red;
 }
 
 .revealed-mine {
 
   background-color: blue;
+}
+
+.flagged {
+  background-image: ;
 }
