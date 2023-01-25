@@ -23,15 +23,16 @@ header {
 #board {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  background-color: black;
+  background-color: grey;
   border-radius: 1vmin;
+  background-image: url("/images/templar_circle.jpg");
 }
 
 #board > div {
   height: 4vh;
   width: 4vh;
   /* background-color: #8796A9; */
-  border: 1px solid aqua;
+  border: 1px solid black;
   border-radius: 10%;
   background-image:
 }
