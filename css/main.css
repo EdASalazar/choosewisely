@@ -72,16 +72,13 @@ h1 {
 
 
 .revealed-mine {
-  background-image: url("images/PD-of-mammoth-cave.jpg");
-  imag
-  /* background-color: black; */
+  background-color: black;
    
 }
 
 
 
 .flagged {
-
   background-color: rgb(134, 20, 20);
   color: rgba(255, 255, 255, 0)
   
