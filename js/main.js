@@ -1,7 +1,7 @@
 /*----- constants -----*/
 const BOARD_ROWS = 10;
 const BOARD_COLS = 10;
-const MINE_PCT = 20; //change back to 20 before deploy
+const MINE_PCT = 20;
 
 
 
