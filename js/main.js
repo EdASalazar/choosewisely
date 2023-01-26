@@ -86,8 +86,8 @@ resolveClick() {
              currentNeighbor.isRevealed === true;
           }
 
-        // console.log(clickedSquare.neighbors[i])
-        // console.log(currentNeighbor)
+        
+        console.log(currentNeighbor)
         console.log(currentNeighbor.isFlagged)
        
       }
