@@ -154,15 +154,16 @@ class ChooseWiselyGame {
           document.getElementById(`r${rowIdx} c${colIdx}`).classList.remove('flagged');
           document.getElementById(`r${rowIdx} c${colIdx}`).classList.remove('revealed');
           document.getElementById(`r${rowIdx} c${colIdx}`).classList.remove('revealed-mine');
-        
-
+          document.querySelector('button').style.visibility = "hidden"; 
+          
         }
+        
       }
       
     }
     
-  function getNeighbors(cell) {
-    const neighbors = [];
+    function getNeighbors(cell) {
+      const neighbors = [];
       for (let rowOffset = -1; rowOffset < 2; rowOffset++) {
         for (let colOffset = -1; colOffset < 2; colOffset++) {
           const rowIdx = cell.rowIdx + rowOffset;
@@ -171,32 +172,34 @@ class ChooseWiselyGame {
             !(rowIdx === cell.rowIdx && colIdx === cell.colIdx) &&
             rowIdx >= 0 && rowIdx < board.length &&
             colIdx >= 0 && colIdx < board[0].length
-          ) neighbors.push(board[rowIdx][colIdx]);
+            ) neighbors.push(board[rowIdx][colIdx]);
+          }
+        }
+        return neighbors;
+      }
+      
+      initialize();
+      
+      function initialize() {
+        game = new ChooseWiselyGame(boardEl, msgEl);
+        game.play();
+        
+      }
+      
+      function endGame() {
+        
+        
+        for (let rowIdx = 0; rowIdx < BOARD_ROWS; rowIdx++) {
+          for (let colIdx = 0; colIdx < BOARD_COLS; colIdx++) {
+            const cell = board[rowIdx][colIdx];
+            cell.isRevealed = true;
+            document.querySelector('button').style.visibility = "visible"; 
+            
+          }
         }
       }
-      return neighbors;
-    }
-
-  initialize();
-    
-    function initialize() {
-      game = new ChooseWiselyGame(boardEl, msgEl);
-      game.play();
-    
-    }
-
-function endGame() {
-  
-  
-  for (let rowIdx = 0; rowIdx < BOARD_ROWS; rowIdx++) {
-    for (let colIdx = 0; colIdx < BOARD_COLS; colIdx++) {
-      const cell = board[rowIdx][colIdx];
-      cell.isRevealed = true;
       
-    }
-  }
-}
-
-/*----- icebox and other stuff...do not enter -----*/
-
-
+      /*----- icebox and other stuff...do not enter -----*/
+      
+      
+      

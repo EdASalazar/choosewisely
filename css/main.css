@@ -12,9 +12,9 @@ body {
   justify-self: center;
   align-items: center;
   background-image: url("../images/ext with sky.webp");
-  /* background-repeat: no-repeat; */
   background-size: cover;
   background-color: rgb(206, 170, 151);
+  color: rgba(0, 0, 0, 0)
 }
 
 header {
@@ -22,6 +22,7 @@ header {
   margin-top: 5vh;
   color: rgb(176, 52, 58);
   text-shadow: white 1px 1px 2px;
+  letter-spacing: 1vh;
 }
 
 h1 {
@@ -43,6 +44,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+ 
 }
 
 #board {
@@ -74,7 +76,8 @@ h1 {
   align-items: center;
 }
 #board > div:hover {
-  cursor: hatpointer;
+  cursor: pointer;
+  border: solid .5vh orange;
 }
 
 #button {
@@ -118,3 +121,8 @@ button {
   font-family: 'MedievalSharp', cursive;
 }
 
+button:hover {
+  cursor: pointer;
+  background-image: url("../images/skull-wall.jpg");
+  background-size: contain;
+}
