@@ -12,10 +12,10 @@ body {
   justify-self: center;
   align-items: center;
   background-image: url("https://www.theartistree.fm/wp-content/uploads/2021/09/Indiana-Jones-3.jpg");
-  background-color: rgb(206, 170, 151);
   background-repeat: no-repeat;
   background-size: cover;
-  color: rgba(255, 255, 255, 0)
+  background-color: rgb(206, 170, 151);
+  color: rgba(255, 255, 255, 0);
 }
 
 
@@ -41,7 +41,7 @@ h1 {
   background-repeat: no-repeat;
   background-size:     cover; 
   background-position: center center;
- /* color: black; remove before depoly */
+ 
 }
 
 #board > div {
@@ -65,6 +65,7 @@ h1 {
 }
 
 .revealed {
+  background: -webkit-radial-gradient(circle, grey, rgb(50, 50, 50));
   background-color: gray; 
   color: black;
   text-shadow: lightgrey 1px 1px 2px;
@@ -80,15 +81,18 @@ h1 {
 
 
 .flagged {
+  background-image: url("images/hat_drawing.png");
   background-color: rgb(134, 20, 20);
-  color: rgba(255, 255, 255, 0)
-  
+ 
 }
   
 
 button {
- background-color: radial-gradient(circle at center, grey 70,black 30%);
- border-radius: 30%;
- padding: 1;
+  background: -webkit-radial-gradient(circle, grey, rgb(3, 3, 3));
+  border-radius: 30%;
+  padding: 1.5vh;
+  color: rgb(204, 204, 204);
+  text-shadow: black 1px 1px 2px;
+  font-family: 'MedievalSharp', cursive;
 }
 

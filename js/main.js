@@ -10,6 +10,8 @@ let game;
 let board;
 let turn;
 let clickedSquare;
+let flagsUsed = 0;
+let totalMines = 0; 
 
 /*----- cached element references -----*/
 const boardEl = document.getElementById('board');
@@ -47,9 +49,12 @@ class ChooseWiselyGame {
       
       if(clickedSquare.isFlagged === false) {
         clickedSquare.isFlagged = true;
+        flagsUsed += 1;
        } else if (clickedSquare.isFlagged = true) {
         clickedSquare.isFlagged = false;
+        flagsUsed -= 1;
        };
+       console.log(flagsUsed);
        this.render();
     });
 //left click
@@ -70,6 +75,7 @@ class ChooseWiselyGame {
   
   resolveClick() {
     if (clickedSquare.isMine === true) {
+      // Audio("sounds/326064__robinhood76__06080-man-falling-1.wav");
       endGame();
     } else if (clickedSquare.isFlagged === true || clickedSquare.isRevealed === true) {
 
@@ -146,7 +152,7 @@ class ChooseWiselyGame {
           cell.neighbors = getNeighbors(cell);
           cell.adjMineCount = cell.neighbors.reduce((count, cell) => cell.isMine ? count + 1 : count, 0);
           document.getElementById(`r${rowIdx} c${colIdx}`).innerHTML = `${cell.adjMineCount}`;
-          //removes any html class from the div
+          //removes the html classes from prior games from the div 
           document.getElementById(`r${rowIdx} c${colIdx}`).classList.remove('flagged');
           document.getElementById(`r${rowIdx} c${colIdx}`).classList.remove('revealed');
           document.getElementById(`r${rowIdx} c${colIdx}`).classList.remove('revealed-mine');
@@ -154,6 +160,7 @@ class ChooseWiselyGame {
 
         }
       }
+      
     }
     
   function getNeighbors(cell) {
@@ -181,24 +188,17 @@ class ChooseWiselyGame {
     }
 
 function endGame() {
-
+  
+  
   for (let rowIdx = 0; rowIdx < BOARD_ROWS; rowIdx++) {
     for (let colIdx = 0; colIdx < BOARD_COLS; colIdx++) {
       const cell = board[rowIdx][colIdx];
       cell.isRevealed = true;
+      
     }
   }
 }
 
+/*----- icebox and other stuff...do not enter -----*/
 
-// function flood() {
-//   // console.log(clickedSquare.neighbors);
-//   clickedSquare.isRevealed = true;
-//   clickedSquare.isFlagged = false;
-//   if (clickedSquare.neighbors === 0) {
-//     clickedSquare.neighbors.forEach(function (neighbor) {
-//           if (!neighbor.isMine && !neighbor.isRevealed) 
-//           flood(neighbor); 
-//       });   
-//   }
-// }
+
