@@ -80,11 +80,11 @@ resolveClick() {
       clickedSquare.isRevealed = true; 
       // theFlood();
       for (let i = 0; i < clickedSquare.neighbors.length; i++) {
-          currentNeighbor = clickedSquare.neighbors[i];
+         const currentNeighbor = clickedSquare.neighbors[i];
           if (currentNeighbor.isRevealed === false && currentNeighbor.isMine === false) {
              currentNeighbor.isFlagged === false;
              currentNeighbor.isRevealed === true;
-          }
+          } 
 
         
         console.log(currentNeighbor)
@@ -148,7 +148,11 @@ render() {
           cell.neighbors = getNeighbors(cell);
           cell.adjMineCount = cell.neighbors.reduce((count, cell) => cell.isMine ? count + 1 : count, 0);
           document.getElementById(`r${rowIdx} c${colIdx}`).innerHTML = `${cell.adjMineCount}`;
-          
+          //removes any html class from the div
+          document.getElementById(`r${rowIdx} c${colIdx}`).classList.remove('flagged');
+          document.getElementById(`r${rowIdx} c${colIdx}`).classList.remove('revealed');
+          document.getElementById(`r${rowIdx} c${colIdx}`).classList.remove('revealed-mine');
+        
 
         }
       }
@@ -188,12 +192,3 @@ function endGame() {
   }
 }
 
-// function theFlood(clickedSquare.neighbors) {
-//       for (let i =0; i < clickedSquare.neighbors.length; i++) {
-//        return console.log(clickedSquare.neighbors[0]);
-        
-//       }
-//     }
-
-// console.log(clickedSquare.neighbors[0]);
- 
