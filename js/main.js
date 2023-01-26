@@ -76,27 +76,20 @@ class ChooseWiselyGame {
     }  else if (clickedSquare.isFlagged === false && clickedSquare.isRevealed === false) {
       flood(clickedSquare); }
       
-      function flood(x) {
-        console.log(clickedSquare);
-        console.log(clickedSquare.isRevealed);
-        x.isRevealed = true;
-        x.isFlagged = false;
-        console.log(x.isRevealed);
-        if (x.adjMineCount === 0) {
-          x.neighbors.forEach(function (neighbor) {
+      function flood(square) {
+        // console.log(square.isRevealed);
+        square.isRevealed = true;
+        square.isFlagged = false;
+        // console.log(square.isRevealed);
+        if (square.adjMineCount === 0) {
+          square.neighbors.forEach(function (neighbor) {
             if (neighbor.isMine === false && neighbor.isRevealed === false) 
             flood(neighbor);        
       });                            
     }
   } 
  }
-        
-        
-        // clickedSquare.isFlagged = false;
-        // clickedSquare.isRevealed = true;
-      
-      // console.log(clickedSquare)
-      // console.log(clickedSquare.isFlagged);
+
   
    
       render() {
