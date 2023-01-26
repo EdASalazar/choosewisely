@@ -76,14 +76,14 @@ class ChooseWiselyGame {
     }  else if (clickedSquare.isFlagged === false && clickedSquare.isRevealed === false) {
       flood(clickedSquare); }
       
-      function flood() {
+      function flood(x) {
         console.log(clickedSquare);
         console.log(clickedSquare.isRevealed);
-        clickedSquare.isRevealed = true;
-        clickedSquare.isFlagged = false;
-        console.log(clickedSquare.isRevealed);
-        if (clickedSquare.adjMineCount === 0) {
-          clickedSquare.neighbors.forEach(function (neighbor) {
+        x.isRevealed = true;
+        x.isFlagged = false;
+        console.log(x.isRevealed);
+        if (x.adjMineCount === 0) {
+          x.neighbors.forEach(function (neighbor) {
             if (neighbor.isMine === false && neighbor.isRevealed === false) 
             flood(neighbor);        
       });                            
