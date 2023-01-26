@@ -51,7 +51,7 @@ h1 {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   background-color: rgb(145, 137, 137);
-  border-radius: 1vmin;
+  border-radius: 2%;
   background-image: url("../images/Templar Metal.jpg");
   background-repeat: no-repeat;
   background-size: cover; 
@@ -69,14 +69,14 @@ h1 {
   min-width: 6vh;
   display: flex;
   border-radius: 13%;
-  border: 1.5px solid rgb(50, 50, 50);
+  border: .2vh solid rgb(50, 50, 50);
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 #board > div:hover {
   cursor: pointer;
-  border: solid .5vh orange;
+  border: solid .2vh rgb(255, 145, 0);
 }
 
 #button {
