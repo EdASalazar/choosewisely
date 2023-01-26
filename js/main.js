@@ -10,7 +10,6 @@ let game;
 let board;
 let turn;
 let clickedSquare;
-let currentNeighbor;
 
 /*----- cached element references -----*/
 const boardEl = document.getElementById('board');
@@ -69,32 +68,40 @@ class ChooseWiselyGame {
   }
 
   
-resolveClick() {
-  if (clickedSquare.isMine === true) {
-    endGame();
-  } else if (clickedSquare.isFlagged === true || clickedSquare.isRevealed === true) {
-  }  else if 
-    (clickedSquare.isFlagged === false && clickedSquare.isRevealed === false) {
-      clickedSquare.isRevealed = true; 
-      // theFlood
-      for (let i = 0; i < clickedSquare.neighbors.length; i++) {
-         const currentNeighbor = clickedSquare.neighbors[i];
-          if (currentNeighbor.isRevealed === false && currentNeighbor.isMine === false) {
-            // if (currentNeighbor.adjMineCount === 0 && currentNeighbor.isRevealed === false) {
-            //   currentNeighbor.isRevealed === tr
-            // }
-             currentNeighbor.isFlagged = false;
-             currentNeighbor.isRevealed = true;
-          } 
-//safety to prevent mines from revealing 
-        
-       console.log(currentNeighbor)
-       console.log(currentNeighbor.isFlagged)
+  resolveClick() {
+    if (clickedSquare.isMine === true) {
+      endGame();
+    } else if (clickedSquare.isFlagged === true || clickedSquare.isRevealed === true) {
+
+    }  else if (clickedSquare.isFlagged === false && clickedSquare.isRevealed === false) {
+      flood(clickedSquare); }
       
-     }
+      function flood() {
+        console.log(clickedSquare);
+        console.log(clickedSquare.isRevealed);
+        clickedSquare.isRevealed = true;
+        clickedSquare.isFlagged = false;
+        console.log(clickedSquare.isRevealed);
+        if (clickedSquare.adjMineCount === 0) {
+          clickedSquare.neighbors.forEach(function (neighbor) {
+            if (neighbor.isMine === false && neighbor.isRevealed === false) 
+            flood(neighbor); 
+      });                            
+    }
+    
   } 
-}
-//endGame();
+  
+    }
+        
+        
+        // clickedSquare.isFlagged = false;
+        // clickedSquare.isRevealed = true;
+      
+      // console.log(clickedSquare)
+      // console.log(clickedSquare.isFlagged);
+  
+   
+
   play() {
     this.squares = this.squareEls.map(el => new Square(el));
     this.render();
@@ -192,3 +199,15 @@ function endGame() {
   }
 }
 
+
+// function flood() {
+//   // console.log(clickedSquare.neighbors);
+//   clickedSquare.isRevealed = true;
+//   clickedSquare.isFlagged = false;
+//   if (clickedSquare.neighbors === 0) {
+//     clickedSquare.neighbors.forEach(function (neighbor) {
+//           if (!neighbor.isMine && !neighbor.isRevealed) 
+//           flood(neighbor); 
+//       });   
+//   }
+// }
