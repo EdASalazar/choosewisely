@@ -15,7 +15,6 @@ body {
   /* background-repeat: no-repeat; */
   background-size: cover;
   background-color: rgb(206, 170, 151);
-  color: rgb(15, 13, 13);
 }
 
 header {
@@ -85,23 +84,24 @@ h1 {
 .revealed {
   background-image: url("../images/Sheep-stone.jpg");
   background-color: gray; 
-  color: black;
-  text-shadow: lightgrey 1px 1px 2px;
+  color: rgb(83, 51, 36);
+  text-shadow: rgb(197, 134, 93) 1px 2px 2px;
   text-align: center;
   background-size: cover; 
 }
 
 
 .revealed-mine {
+  background-image: url("../images/death.jpg");
   background-color: black;
-  color:rgb(204, 204, 204, 0)
-   
+  color:rgb(204, 204, 204, 0);
+  background-size: cover; 
 }
 
 
 
 .flagged {
-  background-image: url("../images/hat_photo.jpg");
+  background-image: url("../images/fish stone.jpg");
   background-color: rgb(134, 20, 20);
   background-size: cover;
   align-items: center;
