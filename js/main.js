@@ -1,7 +1,7 @@
 /*----- constants -----*/
 const BOARD_ROWS = 10;
 const BOARD_COLS = 10;
-const MINE_PCT = 5; //change back to 20 before deploy
+const MINE_PCT = 20; //change back to 20 before deploy
 
 
 
@@ -16,8 +16,6 @@ let currentNeighbor;
 const boardEl = document.getElementById('board');
 const msgEl = document.getElementById('message');
 const resetBtn = document.querySelector('button').addEventListener('click', init);
-// console.log(resetBtn);
-
 
 /*----- classes -----*/
 
@@ -78,21 +76,23 @@ resolveClick() {
   }  else if 
     (clickedSquare.isFlagged === false && clickedSquare.isRevealed === false) {
       clickedSquare.isRevealed = true; 
-      // theFlood();
+      // theFlood
       for (let i = 0; i < clickedSquare.neighbors.length; i++) {
          const currentNeighbor = clickedSquare.neighbors[i];
           if (currentNeighbor.isRevealed === false && currentNeighbor.isMine === false) {
-             currentNeighbor.isFlagged === false;
-             currentNeighbor.isRevealed === true;
+            // if (currentNeighbor.adjMineCount === 0 && currentNeighbor.isRevealed === false) {
+            //   currentNeighbor.isRevealed === tr
+            // }
+             currentNeighbor.isFlagged = false;
+             currentNeighbor.isRevealed = true;
           } 
-
+//safety to prevent mines from revealing 
         
-        console.log(currentNeighbor)
-        console.log(currentNeighbor.isFlagged)
-       
-      }
+       console.log(currentNeighbor)
+       console.log(currentNeighbor.isFlagged)
       
-  }
+     }
+  } 
 }
 //endGame();
   play() {
