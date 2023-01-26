@@ -85,13 +85,11 @@ class ChooseWiselyGame {
         if (clickedSquare.adjMineCount === 0) {
           clickedSquare.neighbors.forEach(function (neighbor) {
             if (neighbor.isMine === false && neighbor.isRevealed === false) 
-            flood(neighbor); 
+            flood(neighbor);        
       });                            
     }
-    
   } 
-  
-    }
+ }
         
         
         // clickedSquare.isFlagged = false;
@@ -101,32 +99,32 @@ class ChooseWiselyGame {
       // console.log(clickedSquare.isFlagged);
   
    
+      render() {
+        this.squares.forEach(square => square.render());
+      
+        board.forEach(function(rowArr, rowIdx) {
+          rowArr.forEach(function(square, colIdx) {
+            let cellEl = document.getElementById(`r${rowIdx} c${colIdx}`) 
+              if (square.isFlagged === true) {
+                cellEl.classList.add('flagged');
+              } else if (square.isFlagged === false) {
+               cellEl.classList.remove('flagged');
+               if (square.isMine === true && square.isRevealed === true) {
+                 cellEl.classList.add('revealed-mine');
+               } else if (square.isRevealed === true && square.isMine === false) {
+                cellEl.classList.add('revealed');
+      
+              }
+            } 
+           }); 
+          })
+         }
 
   play() {
     this.squares = this.squareEls.map(el => new Square(el));
     this.render();
   }
       
-render() {
-  this.squares.forEach(square => square.render());
-
-  board.forEach(function(rowArr, rowIdx) {
-    rowArr.forEach(function(square, colIdx) {
-      let cellEl = document.getElementById(`r${rowIdx} c${colIdx}`) 
-        if (square.isFlagged === true) {
-          cellEl.classList.add('flagged');
-        } else if (square.isFlagged === false) {
-         cellEl.classList.remove('flagged');
-         if (square.isMine === true && square.isRevealed === true) {
-           cellEl.classList.add('revealed-mine');
-         } else if (square.isRevealed === true && square.isMine === false) {
-          cellEl.classList.add('revealed');
-
-        }
-      } 
-     }); 
-    })
-   }
 }
       
     /*----- functions -----*/
