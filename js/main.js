@@ -83,10 +83,8 @@ class ChooseWiselyGame {
       flood(clickedSquare); }
       
       function flood(square) {
-        // console.log(square.isRevealed);
         square.isRevealed = true;
         square.isFlagged = false;
-        // console.log(square.isRevealed);
         if (square.adjMineCount === 0) {
           square.neighbors.forEach(function (neighbor) {
             if (neighbor.isMine === false && neighbor.isRevealed === false) 
@@ -98,20 +96,20 @@ class ChooseWiselyGame {
 
   
    
-      render() {
-        this.squares.forEach(square => square.render());
+  render() {
+   this.squares.forEach(square => square.render());
       
-        board.forEach(function(rowArr, rowIdx) {
-          rowArr.forEach(function(square, colIdx) {
-            let cellEl = document.getElementById(`r${rowIdx} c${colIdx}`) 
-              if (square.isFlagged === true) {
-                cellEl.classList.add('flagged');
-              } else if (square.isFlagged === false) {
-               cellEl.classList.remove('flagged');
-               if (square.isMine === true && square.isRevealed === true) {
-                 cellEl.classList.add('revealed-mine');
-               } else if (square.isRevealed === true && square.isMine === false) {
-                cellEl.classList.add('revealed');
+     board.forEach(function(rowArr, rowIdx) {
+       rowArr.forEach(function(square, colIdx) {
+        let cellEl = document.getElementById(`r${rowIdx} c${colIdx}`) 
+          if (square.isFlagged === true) {
+           cellEl.classList.add('flagged');
+          } else if (square.isFlagged === false) {
+            cellEl.classList.remove('flagged');
+          if (square.isMine === true && square.isRevealed === true) {
+             cellEl.classList.add('revealed-mine');
+           } else if (square.isRevealed === true && square.isMine === false) {
+             cellEl.classList.add('revealed');
       
               }
             } 
