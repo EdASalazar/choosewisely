@@ -3,7 +3,7 @@ const BOARD_ROWS = 10;
 const BOARD_COLS = 10;
 const MINE_PCT = 20;
 const Game_Over_Sound = new Audio('../sounds/scream4.wav');
-const Game_Start = new Audio('../sounds/indiana-jones-theme-song.mp3');
+const Game_Start = new Audio('../sounds/indiana-jones-theme-song.mp3')
 
 /*----- app's state (variables) -----*/
 let game;
@@ -132,7 +132,6 @@ init();
 
 function init() {
   headedEl.innerHTML = "Choose Wisely"
-  // Game_Start.play();
   board = [];
   for (let rowIdx = 0; rowIdx < BOARD_ROWS; rowIdx++) {
     board[rowIdx] = [];
@@ -196,6 +195,7 @@ function endGame() {
       const cell = board[rowIdx][colIdx];
       cell.isRevealed = true;
       Game_Over_Sound.play();
+      Game_Over_Sound.volume = .2;
       document.querySelector('button').style.visibility = "visible";
       document.getElementById('header').innerHTML = "You Chose Poorly!";
     }
@@ -231,6 +231,8 @@ function getWinner() {
       for (let colIdx = 0; colIdx < BOARD_COLS; colIdx++) {
         const cell = board[rowIdx][colIdx];
         cell.isRevealed = true;
+        Game_Start.play();
+        Game_Start.volume = .05;
         headedEl.innerHTML = "You Chose Wisely";
         document.querySelector('button').style.visibility = "visible";
       }
