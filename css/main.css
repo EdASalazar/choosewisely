@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  
+
 }
 
 body {
@@ -40,11 +40,11 @@ h1 {
   text-shadow: white 1px 1px 2px;
 }
 
-#status > div {
+#status>div {
   display: flex;
   justify-content: center;
   align-items: center;
- 
+
 }
 
 #board {
@@ -54,15 +54,15 @@ h1 {
   border-radius: 2%;
   background-image: url("../images/Templar Metal.jpg");
   background-repeat: no-repeat;
-  background-size: cover; 
+  background-size: cover;
   background-position: center center;
   font-size: 5vh;
- 
 
- 
+
+
 }
 
-#board > div {
+#board>div {
   max-height: 20vh;
   max-width: 20vh;
   min-height: 6vh;
@@ -74,7 +74,8 @@ h1 {
   align-items: center;
   text-align: center;
 }
-#board > div:hover {
+
+#board>div:hover {
   cursor: pointer;
   border: solid .2vh rgb(255, 145, 0);
 }
@@ -85,19 +86,19 @@ h1 {
 
 .revealed {
   background-image: url("../images/Sheep-stone.jpg");
-  background-color: gray; 
+  background-color: gray;
   color: rgb(55, 22, 5);
   text-shadow: rgb(237, 224, 216) 2px 3px 3px;
   text-align: center;
-  background-size: cover; 
+  background-size: cover;
 }
 
 
 .revealed-mine {
   background-image: url("../images/death.jpg");
   background-color: black;
-  color:rgb(204, 204, 204, 0);
-  background-size: cover; 
+  color: rgb(204, 204, 204, 0);
+  background-size: cover;
 }
 
 
@@ -107,9 +108,9 @@ h1 {
   background-color: rgb(134, 20, 20);
   background-size: cover;
   align-items: center;
-  color:rgb(204, 204, 204, 0)
+  color: rgb(204, 204, 204, 0)
 }
-  
+
 
 button {
   background-image: url("../images/Rosetta_stone.png");
