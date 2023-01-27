@@ -10,7 +10,7 @@ Game: [Choose Wisely](https://edasalazar.github.io/choosewisely/)
 ![Game: In Progress](https://i.imgur.com/P9LaaDH.png)
 ![Game: Loss](https://i.imgur.com/23WsrdC.png)
 
-_You'll have to play to see what the board looks like when you win_
+_You'll have to play to see what the board looks like when you win_!
 
 ## Techonolgies Used 
 * JavaScript
