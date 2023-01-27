@@ -2,7 +2,7 @@
 ## A Minesweeper game inspired by Indiana Jones and the Last Crusade.
 
 ## Programmed by Edward Salazar
-[Linkdin](https://www.linkedin.com/in/edward-salazar-1744228b/)
+[Linkdin](https://www.linkedin.com/in/edward-salazar-1744228b/)  
 Game: [Choose Wisely](https://edasalazar.github.io/choosewisely/)
 
 ## Sreenshots
