@@ -38,12 +38,16 @@ h1 {
   justify-content: space-between;
   color: rgb(176, 52, 58);
   text-shadow: white 1px 1px 2px;
+  padding-bottom: .5vh;
 }
 
 #status>div {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 5vh;
+  padding: 1vh;
+  
 
 }
 
