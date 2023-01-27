@@ -21,6 +21,8 @@ const msgEl = document.getElementById('message');
 const resetBtn = document.querySelector('button').addEventListener('click', init);
 const headedEl = document.querySelector('header');
 const h1El = document.getElementById('status');
+const trapsEl = document.getElementById('traps');
+const flaggedEL =document.getElementById('flags');
 
 
 /*----- classes -----*/
@@ -58,7 +60,7 @@ class ChooseWiselyGame {
         clickedSquare.isFlagged = false;
         flagsUsed -= 1;
       };
-      console.log(flagsUsed);
+      flaggedEL.innerHTML = `  ${flagsUsed}`;
       this.render();
     });
     //left click
@@ -131,6 +133,8 @@ class ChooseWiselyGame {
 init();
 
 function init() {
+  flagsUsed = 0;
+  mineTotal = 0;
   headedEl.innerHTML = "Choose Wisely"
   board = [];
   for (let rowIdx = 0; rowIdx < BOARD_ROWS; rowIdx++) {
@@ -162,7 +166,10 @@ function init() {
     }
   }
   countMines();
+  trapsEl.innerHTML = ` ${mineTotal}`;
+  
 }
+
 
 function getNeighbors(cell) {
   const neighbors = [];
@@ -208,7 +215,6 @@ function countMines() {
       if (square.isMine === true) {
         mineTotal += 1;
       }
-      console.log(mineTotal);
     })
   })
 }

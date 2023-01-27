@@ -22,7 +22,7 @@ header {
   margin-top: 3vh;
   color: rgb(176, 52, 58);
   text-shadow: white 1px 1px 2px;
-  letter-spacing: 1vh;
+  letter-spacing: .75vh;
 }
 
 h1 {
@@ -33,12 +33,13 @@ h1 {
 
 #status {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   align-items: center;
   justify-content: space-between;
   color: rgb(176, 52, 58);
-  text-shadow: white 1px 1px 2px;
+  text-shadow: rgb(214, 214, 214) 2px 2px 3px;
   padding-bottom: .5vh;
+  letter-spacing: .3vh;
 }
 
 #status>div {
