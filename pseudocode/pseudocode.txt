@@ -56,4 +56,4 @@ Icebox
 -high score
 -timer
 -high score with name
--fastets time 
+-fastest time 
