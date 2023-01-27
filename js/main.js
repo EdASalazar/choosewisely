@@ -1,7 +1,7 @@
 /*----- constants -----*/
 const BOARD_ROWS = 10;
 const BOARD_COLS = 10;
-const MINE_PCT = 90;
+const MINE_PCT = 20;
 
 
 
@@ -229,7 +229,6 @@ function endGame() {
         for (let colIdx = 0; colIdx < BOARD_COLS; colIdx++) {
           const cell = board[rowIdx][colIdx];
           cell.isRevealed = true;
-      console.log("you chose wisely")
       headedEl.innerHTML = "You Chose Wisely";
       document.querySelector('button').style.visibility = "visible";   
         }
