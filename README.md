@@ -6,9 +6,9 @@
 Game: [Choose Wisely](https://edasalazar.github.io/choosewisely/)
 
 ## Sreenshots
-![Game: Start](../choosewisely/images/game-start.png)
-![Game: In Progress](../choosewisely/images/game-in%20progress.png)
-![Game: Loss](../choosewisely/images/game-fisnish%20loss.png)
+![Game: Start](https://i.imgur.com/8DUOWAx.png)
+![Game: In Progress](https://i.imgur.com/P9LaaDH.png)
+![Game: Loss](https://i.imgur.com/23WsrdC.png)
 
 _You'll have to play to see what the board looks like when you win_
 
@@ -39,7 +39,7 @@ You win when the only tiles left are traps.
 
 I wanted to bring a differnet look to a game we've all played waiting for the last hour of Friday work to end. 
 
-[Initial Design](../choosewisely/pseudocode/pseudocode.txt))
+[Initial Design](../choosewisely/pseudocode/pseudocode.txt)  
 [Initial Wire Frame Design](../wireframe/Screen Shot 2023-01-18 at 4.49.31 PM.png)
 
 ## Future Enhancements
