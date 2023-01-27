@@ -22,7 +22,7 @@ const resetBtn = document.querySelector('button').addEventListener('click', init
 const headedEl = document.querySelector('header');
 const h1El = document.getElementById('status');
 const trapsEl = document.getElementById('traps');
-const flaggedEL =document.getElementById('flags');
+const flaggedEL = document.getElementById('flags');
 
 
 /*----- classes -----*/
@@ -52,7 +52,6 @@ class ChooseWiselyGame {
       let rowIdx = evtSplit[0].replace("r", "");
       let colIdx = evtSplit[1].replace("c", "");
       clickedSquare = board[rowIdx][colIdx];
-
       if (clickedSquare.isFlagged === false) {
         clickedSquare.isFlagged = true;
         flagsUsed += 1;
@@ -78,7 +77,7 @@ class ChooseWiselyGame {
     });
   }
 
-
+  //handle clicks and evaluate for loss, flood or win
   resolveClick() {
     if (clickedSquare.isMine === true) {
       endGame();
@@ -167,7 +166,6 @@ function init() {
   }
   countMines();
   trapsEl.innerHTML = ` ${mineTotal}`;
-  
 }
 
 
@@ -202,7 +200,7 @@ function endGame() {
       const cell = board[rowIdx][colIdx];
       cell.isRevealed = true;
       Game_Over_Sound.play();
-      Game_Over_Sound.volume = .2;
+      Game_Over_Sound.volume = .15;
       document.querySelector('button').style.visibility = "visible";
       document.getElementById('header').innerHTML = "You Chose Poorly!";
     }
