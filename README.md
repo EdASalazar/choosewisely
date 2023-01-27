@@ -40,11 +40,11 @@ You win when the only tiles left are traps.
 I wanted to bring a differnet look to a game we've all played waiting for the last hour of Friday work to end. 
 
 [Initial Design](../choosewisely/pseudocode/pseudocode.txt)  
-[Initial Wire Frame Design](../wireframe/Screen Shot 2023-01-18 at 4.49.31 PM.png)
+![Initial Wire Frame Design](https://i.imgur.com/IayBCkU.png)  
 
 ## Future Enhancements
 
-Though I'm happy with the initial build I think there are many enhancements that can be made.
+Though I'm happy with the initial build I think there are many enhancements that can be made.  
 
 1. A scalable board.
 2. A difficulty level that's adjustable by the player. Allowing them to set the amount of bombs.
