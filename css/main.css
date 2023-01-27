@@ -116,9 +116,9 @@ button {
   background-image: url("../images/Rosetta_stone.png");
   border-radius: 30%;
   padding: 1.5vh;
-  color: rgb(222, 217, 217);
-  text-shadow: rgb(4, 4, 4) 2px 2px 6px;
-  font-family: 'MedievalSharp', cursive;
+  color: rgb(40, 32, 32);
+  text-shadow: rgb(231, 226, 226) 2px 2px 6px;
+  font-family: 'MedievalSharp', bold;
 }
 
 button:hover {
