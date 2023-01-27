@@ -2,8 +2,8 @@
 const BOARD_ROWS = 10;
 const BOARD_COLS = 10;
 const MINE_PCT = 20;
-
-
+const Game_Over_Sound = new Audio('../sounds/scream4.wav');
+const Game_Start = new Audio('../sounds/indiana-jones-theme-song.mp3');
 
 /*----- app's state (variables) -----*/
 let game;
@@ -21,6 +21,7 @@ const msgEl = document.getElementById('message');
 const resetBtn = document.querySelector('button').addEventListener('click', init);
 const headedEl = document.querySelector('header');
 const h1El = document.getElementById('status');
+
 
 /*----- classes -----*/
 
@@ -131,6 +132,7 @@ init();
 
 function init() {
   headedEl.innerHTML = "Choose Wisely"
+  Game_Start.play();
   board = [];
   for (let rowIdx = 0; rowIdx < BOARD_ROWS; rowIdx++) {
     board[rowIdx] = [];
@@ -178,7 +180,7 @@ function getNeighbors(cell) {
   }
   return neighbors;
 }
-
+Game_Start.pause();
 
 initialize();
 
@@ -193,6 +195,7 @@ function endGame() {
     for (let colIdx = 0; colIdx < BOARD_COLS; colIdx++) {
       const cell = board[rowIdx][colIdx];
       cell.isRevealed = true;
+      Game_Over_Sound.play();
       document.querySelector('button').style.visibility = "visible";
       document.getElementById('header').innerHTML = "You Chose Poorly!";
     }
