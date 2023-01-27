@@ -1,6 +1,10 @@
 ### Choose Wisely
 ## A Minesweeper game inspired by Indiana Jones and the Last Crusade.
 
+## Programmed by Edward Salazar
+[Linkdin](https://www.linkedin.com/in/edward-salazar-1744228b/)
+Game: [Choose Wisely](https://edasalazar.github.io/choosewisely/)
+
 ## Sreenshots
 ![Game: Start](../choosewisely/images/game-start.png)
 ![Game: In Progress](../choosewisely/images/game-in%20progress.png)
@@ -15,7 +19,7 @@ _You'll have to play to see what the board looks like when you win_
 
 ## How to Play
 
-_Choose Wisely_ functions like many versions of the very popular game Minesweeper.  
+[_Choose Wisely_](https://edasalazar.github.io/choosewisely/) functions like many versions of the very popular game Minesweeper.  
 
 Randomly placed on the board are **booby traps** (aka mines in Minesweeper). You, as Indiana Jones, must avoid the traps while collecting all the non-booby trapped tiles. 
 

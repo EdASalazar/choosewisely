@@ -132,7 +132,7 @@ init();
 
 function init() {
   headedEl.innerHTML = "Choose Wisely"
-  Game_Start.play();
+  // Game_Start.play();
   board = [];
   for (let rowIdx = 0; rowIdx < BOARD_ROWS; rowIdx++) {
     board[rowIdx] = [];
@@ -146,7 +146,7 @@ function init() {
         colIdx
       });
     }
-  }
+  };
 
   for (let rowIdx = 0; rowIdx < BOARD_ROWS; rowIdx++) {
     for (let colIdx = 0; colIdx < BOARD_COLS; colIdx++) {
@@ -180,7 +180,7 @@ function getNeighbors(cell) {
   }
   return neighbors;
 }
-Game_Start.pause();
+
 
 initialize();
 
