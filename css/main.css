@@ -86,8 +86,8 @@ h1 {
 .revealed {
   background-image: url("../images/Sheep-stone.jpg");
   background-color: gray; 
-  color: rgb(83, 51, 36);
-  text-shadow: rgb(197, 134, 93) 1px 2px 2px;
+  color: rgb(55, 22, 5);
+  text-shadow: rgb(237, 224, 216) 2px 3px 3px;
   text-align: center;
   background-size: cover; 
 }
