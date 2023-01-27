@@ -15,17 +15,17 @@ _You'll have to play to see what the board looks like when you win_
 
 ## How to Play
 
-_Choose Wisely_ functions like many of versions of the very popular Minesweeper.  
+_Choose Wisely_ functions like many versions of the very popular game Minesweeper.  
 
 Randomly placed on the board are **booby traps** (aka mines in Minesweeper). You, as Indiana Jones, must avoid the traps while collecting all the non-booby trapped tiles. 
 
-You have two advantes, beside your own cunning and rugged good looks, the tile flood and the flag.
+You have two advantages, besides your own cunning and rugged good looks, the _tile flood_ and the _flag_.
 
-**The flag** is used if you suspet that a trap is hiding under a tile. Just right click that tile. It is now flagged. You won't accidently trigger the trap and your own demise. 
+**The flag** is used when you suspet that a trap is hiding under a tile. Just right click that tile. It is now flagged. You won't accidently trigger the trap and your own demise. 
 
-Start the game by clicking any square. If the square is near a trap or traps it will tell. There will be a number. The number tells you how many traps it is touching. 
+Start the game by clicking any square. If the square is near a trap or traps it will tell you. There will be a number. The number tells you how many traps it is touching. 
 
->**Strategy Tip:** take your time and make use of all the data the board is giving you to flag where you think the traps are. 
+>**Strategy Tip:** take your time and make use of all the data the board is giving you. Flag where you think the traps are. 
 
 As you carefully click you will run into tiles that do not touch any traps. These tiles will cause a **flood** of tiles to be revealed. The flood won't stop until the furthest tiles out are all touching at least one trap. 
 
