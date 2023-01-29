@@ -52,7 +52,7 @@ h1 {
 
 #status>div {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   font-size: 5vh;
   padding: 1vh;

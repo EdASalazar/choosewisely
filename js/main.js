@@ -59,7 +59,7 @@ class ChooseWiselyGame {
         clickedSquare.isFlagged = false;
         flagsUsed -= 1;
       };
-      flaggedEL.innerHTML = `  ${flagsUsed}`;
+      flaggedEL.innerHTML = `:  ${flagsUsed}`;
       this.render();
     });
     //left click
@@ -165,7 +165,7 @@ function init() {
     }
   }
   countMines();
-  trapsEl.innerHTML = ` ${mineTotal}`;
+  trapsEl.innerHTML = `: ${mineTotal}`;
 }
 
 
