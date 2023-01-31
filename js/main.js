@@ -168,6 +168,13 @@ function init() {
   }
   countMines();
   trapsEl.innerHTML = `: ${mineTotal}`;
+
+  function displayTIme(second) {
+    const min = math.floor(second / 60);
+    const sec = math.floor(second % 60);
+    timerEl.innterHTML = `${min} : ${sec}`
+  }
+  
 }
 
 
