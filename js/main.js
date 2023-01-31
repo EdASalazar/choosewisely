@@ -24,7 +24,7 @@ const headedEl = document.querySelector('header');
 const h1El = document.getElementById('status');
 const trapsEl = document.getElementById('traps');
 const flaggedEL = document.getElementById('flags');
-const timerH = document.getElementById('timer');
+const timerEl = document.getElementById('timer');
 
 
 /*----- classes -----*/
@@ -256,5 +256,5 @@ const countUp = setInterval (()=>{
 function displayTIme(second) {
   const min = math.floor(second / 60);
   const sec = math.floor(second % 60);
-  timeH.innterHTML = `${min} : ${sec}`
+  timerEl.innterHTML = `${min} : ${sec}`
 }
