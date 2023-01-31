@@ -14,6 +14,7 @@ let flagsUsed = 0;
 let winner;
 let mineTotal = 0;
 let unrevealedTotal;
+let seconds;
 
 /*----- cached element references -----*/
 const boardEl = document.getElementById('board');
@@ -244,3 +245,5 @@ function getWinner() {
   }
 };
     /*----- icebox and other stuff...do not enter -----*/
+
+
