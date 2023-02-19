@@ -14,7 +14,7 @@ _You'll have to play to see what the board looks like when you win_!
 
 ## Techonolgies Used 
 * JavaScript
-* HTML
+* HTML             
 * CSS
 
 ## How to Play
