@@ -12,6 +12,7 @@ body {
   justify-self: center;
   align-items: center;
   background-image: url("../images/ext with sky.webp");
+  background-repeat: no-repeat;
   background-size: cover;
   background-blend-mode: hard-light;
   background-color: #d3c5c5;
