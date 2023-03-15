@@ -15,13 +15,17 @@
   <link href="css/main.css" rel="stylesheet" type="text/css">
   <script defer src="js/main.js"></script>
 </head>
-
-<nav>
-  <div class="nav-wrapper black" id="status">
-    <ul class="left">
+<nav class="black">
+  <div class="nav-wrapper black">
+    <ul>
       <li>Traps <span id="traps"></span></li>
       <li>Flags <span id="flags">:</span></li>
       <li>Time: <span id="timer"></span></li>
+      <li>
+        <section id="button">
+          <button>Turn Back Now</button>
+        </section>
+      </li>
     </ul>
   </div>
 </nav>
@@ -30,9 +34,8 @@
 <body>
   <div class="container-fluid">
   <header id="header" class="text-center">Choose Wisely</header>
-  <h1> </h1>
   <main>
-    <div class="card col s6">
+    <div class="table">
   <section id="board" oncontextmenu="return false;">
 
     <div id="r0 c0"></div>
@@ -151,9 +154,7 @@
   </section>
 </main>
 </div>
-  <section id="button">
-    <button>Turn Back Now</button>
-  </section>
+
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
   -khtml-user-select: none; /* Konqueror HTML */
