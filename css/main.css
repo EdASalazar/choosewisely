@@ -125,24 +125,9 @@ h1 {
 
 
 button {
-  background-image: url("../images/Rosetta_stone.png");
-  border-radius: 30%;
-  padding: 1.5vh;
-  color: rgb(40, 32, 32);
-  text-shadow: rgb(231, 226, 226) 2px 2px 6px;
   font-family: 'MedievalSharp', bold;
-  
 }
 
-button:hover {
-  cursor: pointer;
-  background-image: url("../images/skull-wall.jpg");
-  background-size: contain;
-  padding: 2.5vh;
-  margin-bottom: 2vh;
-  color: rgb(222, 217, 217);
-  text-shadow: rgb(212, 162, 80) 2px 4px 5px;
-}
 
 main {
   background-color: rgb(0, 0, 0);
@@ -157,5 +142,18 @@ nav {
 }
 
 ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  font-size: 4vh;
+  margin: 0 4vh 0 4vh;
+  color: rgb(176, 52, 58);
+  text-shadow: white .5px .5px;
+
 }
