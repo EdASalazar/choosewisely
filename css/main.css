@@ -13,6 +13,8 @@ body {
   align-items: center;
   background-image: url("../images/ext with sky.webp");
   background-size: cover;
+  background-blend-mode: hard-light;
+  background-color: #d3c5c5;
   color: rgba(0, 0, 0, 0)
 }
 
@@ -20,7 +22,7 @@ header {
   font-size: 7vh;
   margin-top: 3vh;
   color: rgb(176, 52, 58);
-  text-shadow: white 1px 1px 2px;
+  text-shadow: rgb(4, 4, 4) 1px 2px 2px;
   letter-spacing: .75vh;
 }
 
@@ -62,9 +64,10 @@ h1 {
 #board {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  background-color: rgb(145, 137, 137);
+  background-color: rgb(160, 157, 157);
   border-radius: 2%;
   background-image: url("../images/Templar Metal.jpg");
+  background-blend-mode: hard-light;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -92,9 +95,7 @@ h1 {
   border: solid .2vh rgb(255, 145, 0);
 }
 
-#button {
-  padding-top: 2vh;
-}
+
 
 .revealed {
   background-image: url("../images/Sheep-stone.jpg");
@@ -155,5 +156,6 @@ li {
   margin: 0 4vh 0 4vh;
   color: rgb(176, 52, 58);
   text-shadow: white .5px .5px;
+  text-align: center;
 
 }
