@@ -169,7 +169,7 @@ function init() {
   }
   countMines();
   trapsEl.innerHTML = `: ${mineTotal}`;
-  timer() 
+
 }
 
 
@@ -247,25 +247,13 @@ function getWinner() {
     }
   }
 };
-    /*----- icebox and other stuff...do not enter -----*/
 
-    //need to create a place for the time to show up. 
-// const countUp = setInterval (()=>{
-//   timeSecond++;
-//   displayTime(timeSecond);
-// },1000)
-    
-// function displayTIme(second) {
-//   const min = math.floor(second / 60);
-//   const sec = math.floor(second % 60);
-//   timerEl.innterHTML = `${min} : ${sec}`
-// }
-
-function timer() {
-  const timer = setInterval(function() {
-    
-
-    timerEl.innerHTML = Timer;
-    sec++;
-  }, 1000);
+function timer(){
+  var sec = 0;
+  Timer = setInterval(() => {
+    timerEl.innerHTML = '00:' +sec;
+    sec ++;
+  }, 1000)
 }
+
+/*----- icebox and other stuff...do not enter -----*/
