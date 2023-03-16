@@ -4,6 +4,7 @@ const BOARD_COLS = 10;
 const MINE_PCT = 20;
 const Game_Over_Sound = new Audio('../sounds/scream4.wav');
 const Game_Start = new Audio('../sounds/indiana-jones-theme-song.mp3')
+const Timer = 0;
 
 /*----- app's state (variables) -----*/
 let game;
@@ -168,9 +169,7 @@ function init() {
   }
   countMines();
   trapsEl.innerHTML = `: ${mineTotal}`;
-
-  
-  
+  timer() 
 }
 
 
@@ -261,3 +260,12 @@ function getWinner() {
 //   const sec = math.floor(second % 60);
 //   timerEl.innterHTML = `${min} : ${sec}`
 // }
+
+function timer() {
+  const timer = setInterval(function() {
+    
+
+    timerEl.innerHTML = Timer;
+    sec++;
+  }, 1000);
+}
