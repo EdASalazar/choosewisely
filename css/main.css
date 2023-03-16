@@ -19,19 +19,15 @@ body {
   color: rgba(0, 0, 0, 0)
 }
 
-header {
+h1 {
   font-size: 7vh;
-  margin-top: 3vh;
+  margin: 5vh 0vh 5vh 0vh;
   color: rgb(176, 52, 58);
-  text-shadow: rgb(4, 4, 4) 1px 2px 2px;
+  text-shadow: rgb(221, 221, 221) 1px 2px 2px;
   letter-spacing: .75vh;
+  
 }
 
-h1 {
-  margin: 0 auto;
-  color: rgb(176, 52, 58);
-  text-shadow: white 1px 1px 2px;
-}
 
 #status {
   display: grid;
@@ -141,6 +137,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 5vh;
 }
 
 ul {
