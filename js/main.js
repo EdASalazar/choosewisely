@@ -201,7 +201,7 @@ function initialize() {
 }
 
 function endGame() {
-
+  pause();
   for (let rowIdx = 0; rowIdx < BOARD_ROWS; rowIdx++) {
     for (let colIdx = 0; colIdx < BOARD_COLS; colIdx++) {
       const cell = board[rowIdx][colIdx];
@@ -210,6 +210,7 @@ function endGame() {
       Game_Over_Sound.volume = .15;
       document.querySelector('button').style.visibility = "visible";
       document.getElementById('header').innerHTML = "You Chose Poorly!";
+      
     }
   }
 }
@@ -252,12 +253,15 @@ function getWinner() {
 };
     /*----- icebox and other stuff...do not enter -----*/
 
-    function timer(){
-      let sec = 0;
-      Timer = setInterval(() => {
-        timerEl.innerHTML = '00:' +sec;
-        sec ++;
-        console.log(Timer)
-      }, 1000)
-    }
-    
+function timer(){
+  let sec = 0;
+  Timer = setInterval(() => {
+    timerEl.innerHTML = '00:' +sec;
+    sec ++;
+    console.log(Timer)
+  }, 1000)
+}
+
+function pause(){
+  clearInterval(timer);
+}
