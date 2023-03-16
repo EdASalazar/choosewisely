@@ -164,12 +164,13 @@ function init() {
       document.getElementById(`r${rowIdx} c${colIdx}`).classList.remove('revealed');
       document.getElementById(`r${rowIdx} c${colIdx}`).classList.remove('revealed-mine');
       document.querySelector('button').style.visibility = "hidden";
+      
 
     }
   }
   countMines();
   trapsEl.innerHTML = `: ${mineTotal}`;
-
+  
 }
 
 
@@ -195,6 +196,8 @@ initialize();
 function initialize() {
   game = new ChooseWiselyGame(boardEl, msgEl);
   game.play();
+
+  timer()
 }
 
 function endGame() {
@@ -247,13 +250,14 @@ function getWinner() {
     }
   }
 };
+    /*----- icebox and other stuff...do not enter -----*/
 
-function timer(){
-  var sec = 0;
-  Timer = setInterval(() => {
-    timerEl.innerHTML = '00:' +sec;
-    sec ++;
-  }, 1000)
-}
-
-/*----- icebox and other stuff...do not enter -----*/
+    function timer(){
+      let sec = 0;
+      Timer = setInterval(() => {
+        timerEl.innerHTML = '00:' +sec;
+        sec ++;
+        console.log(Timer)
+      }, 1000)
+    }
+    

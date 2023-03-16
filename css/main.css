@@ -7,7 +7,7 @@ body {
   font-family: 'MedievalSharp', cursive;
   display: flex;
   flex-direction: column;
-  justify-self: center;
+  justify-content: center;
   align-items: center;
   background-image: url("../images/ext with sky.webp");
   background-size: cover;
@@ -29,7 +29,7 @@ h1 {
 
 #board {
   display: grid;
-  width: 60%;
+  min-width: 60vh;
   grid-template-columns: repeat(10, 1fr);
   background-color: rgb(160, 157, 157);
   border-radius: 2%;
