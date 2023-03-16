@@ -20,7 +20,7 @@ let seconds;
 const boardEl = document.getElementById('board');
 const msgEl = document.getElementById('message');
 const resetBtn = document.querySelector('button').addEventListener('click', init);
-const headedEl = document.querySelector('header');
+const headedEl = document.querySelector('h1');
 const h1El = document.getElementById('status');
 const trapsEl = document.getElementById('traps');
 const flaggedEL = document.getElementById('flags');
