@@ -52,5 +52,4 @@ Though I'm happy with the initial build I think there are many enhancements that
 4. A timer.
 5. A counter for the number of flags and traps. 
 6. A way to track the times and scores over multiple games. 
-
-
+7. Animation
