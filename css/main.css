@@ -12,7 +12,7 @@ body {
   background-image: url("../images/ext with sky.webp");
   background-size: cover;
   background-blend-mode: hard-light;
-  background-color: #d3c5c5;
+  background-color: #ccc5c5;
   color: rgba(0, 0, 0, 0)
 }
 
@@ -31,12 +31,11 @@ h1 {
   display: grid;
   min-width: 60vh;
   grid-template-columns: repeat(10, 1fr);
-  background-color: rgb(160, 157, 157);
-  border-radius: 2%;
-  background-image: url("../images/Templar Metal.jpg");
+  background-color: rgb(255, 255, 255);
+  background-image: url("../images/knightsymbol.jpg");
   background-blend-mode: hard-light;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: fit;
   background-position: center center;
   font-size: 5vh;
 }
@@ -47,16 +46,20 @@ h1 {
   min-height: 6vh;
   min-width: 6vh;
   display: flex;
-  border-radius: 13%;
-  border: .2vh solid rgb(50, 50, 50);
+  border: .2vh solid rgb(220, 218, 218);
+  border-radius: 7%;
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding-left: 2vh;
+  padding-right: 2vh;
+ 
 }
 
 #board>div:hover {
   cursor: pointer;
-  border: solid .2vh rgb(255, 145, 0);
+  border: solid .25vh rgb(49, 49, 49);
+ 
 }
 
 
@@ -102,7 +105,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(208, 166, 107, 0.9);
+  background-color: rgba(208, 147, 107, 0.9);
 }
 
 ul {
