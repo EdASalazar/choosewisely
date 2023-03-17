@@ -19,8 +19,8 @@ body {
 h1 {
   font-size: 7vh;
   margin: 5vh 0vh 5vh;
-  color: rgb(0, 0, 0);
-  text-shadow: rgb(251, 251, 251) 1px 2px 2px;
+  color: rgb(238, 77, 77);
+  text-shadow: rgb(0, 0, 0) .75vh .5vh .5vh;
   letter-spacing: .75vh;
   
 }
@@ -102,6 +102,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: rgba(208, 166, 107, 0.9);
 }
 
 ul {
@@ -116,8 +117,8 @@ ul {
 li {
   font-size: 4vh;
   margin: 0 4vh 0 4vh;
-  color: rgb(176, 52, 58);
-  text-shadow: white .5px .5px;
+  color: rgb(238, 77, 77);
+  text-shadow: rgb(0, 0, 0) .5px .5px;
   text-align: center;
   padding: 0 4vh 0 4vh;
 
