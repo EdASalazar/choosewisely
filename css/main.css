@@ -58,7 +58,7 @@ h1 {
 
 #board>div:hover {
   cursor: pointer;
-  border: solid .25vh rgb(49, 49, 49);
+  border: solid .2vh rgb(49, 49, 49);
  
 }
 
