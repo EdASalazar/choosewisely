@@ -19,8 +19,8 @@ body {
 h1 {
   font-size: 7vh;
   margin: 5vh 0vh 5vh;
-  color: rgb(176, 52, 58);
-  text-shadow: rgb(240, 235, 235) 1px 2px 2px;
+  color: rgb(0, 0, 0);
+  text-shadow: rgb(251, 251, 251) 1px 2px 2px;
   letter-spacing: .75vh;
   
 }
