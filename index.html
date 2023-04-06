@@ -1,164 +1,164 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/> -->
-  <title>Choose Wisely!</title>
-  <link rel="icon" href="data:;base64,=">
-  <link href="css/main.css" rel="stylesheet" type="text/css">
-  <script defer src="js/main.js"></script>
-</head>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/> -->
+    <title>Choose Wisely!</title>
+    <link rel="icon" href="data:;base64,=">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <script defer src="js/main.js"></script>
+  </head>
 
-<body>
-  <nav>
-    <div>
-      <ul>
-        <li>Traps <span id="traps"></span></li>
-        <li>Flags <span id="flags">:</span></li>
-        <!-- <li>Time: <span id="timer"></span></li> -->
-        <li>
-          <button id="button" class="btn waves-effect waves-light red darken-2">Give Up</button>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
-
-
-  <h1 id="header" class="text-center">Choose Wisely</h1>
-  <section id="board" oncontextmenu="return false;">
-
-    <div id="r0 c0"></div>
-    <div id="r0 c1"></div>
-    <div id="r0 c2"></div>
-    <div id="r0 c3"></div>
-    <div id="r0 c4"></div>
-    <div id="r0 c5"></div>
-    <div id="r0 c6"></div>
-    <div id="r0 c7"></div>
-    <div id="r0 c8"></div>
-    <div id="r0 c9"></div>
-
-    <div id="r1 c0"></div>
-    <div id="r1 c1"></div>
-    <div id="r1 c2"></div>
-    <div id="r1 c3"></div>
-    <div id="r1 c4"></div>
-    <div id="r1 c5"></div>
-    <div id="r1 c6"></div>
-    <div id="r1 c7"></div>
-    <div id="r1 c8"></div>
-    <div id="r1 c9"></div>
-
-    <div id="r2 c0"></div>
-    <div id="r2 c1"></div>
-    <div id="r2 c2"></div>
-    <div id="r2 c3"></div>
-    <div id="r2 c4"></div>
-    <div id="r2 c5"></div>
-    <div id="r2 c6"></div>
-    <div id="r2 c7"></div>
-    <div id="r2 c8"></div>
-    <div id="r2 c9"></div>
+  <body>
+    <nav>
+      <div>
+        <ul>
+          <li>Traps <span id="traps"></span></li>
+          <li>Flags <span id="flags">:</span></li>
+          <!-- <li>Time: <span id="timer"></span></li> -->
+          <li>
+            <button id="button" class="btn waves-effect waves-light red darken-2">Give Up</button>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
 
-    <div id="r3 c0"></div>
-    <div id="r3 c1"></div>
-    <div id="r3 c2"></div>
-    <div id="r3 c3"></div>
-    <div id="r3 c4"></div>
-    <div id="r3 c5"></div>
-    <div id="r3 c6"></div>
-    <div id="r3 c7"></div>
-    <div id="r3 c8"></div>
-    <div id="r3 c9"></div>
 
-    <div id="r4 c0"></div>
-    <div id="r4 c1"></div>
-    <div id="r4 c2"></div>
-    <div id="r4 c3"></div>
-    <div id="r4 c4"></div>
-    <div id="r4 c5"></div>
-    <div id="r4 c6"></div>
-    <div id="r4 c7"></div>
-    <div id="r4 c8"></div>
-    <div id="r4 c9"></div>
+    <h1 id="header" class="text-center">Choose Wisely</h1>
+    <section id="board" oncontextmenu="return false;">
 
-    <div id="r5 c0"></div>
-    <div id="r5 c1"></div>
-    <div id="r5 c2"></div>
-    <div id="r5 c3"></div>
-    <div id="r5 c4"></div>
-    <div id="r5 c5"></div>
-    <div id="r5 c6"></div>
-    <div id="r5 c7"></div>
-    <div id="r5 c8"></div>
-    <div id="r5 c9"></div>
+      <div id="r0 c0"></div>
+      <div id="r0 c1"></div>
+      <div id="r0 c2"></div>
+      <div id="r0 c3"></div>
+      <div id="r0 c4"></div>
+      <div id="r0 c5"></div>
+      <div id="r0 c6"></div>
+      <div id="r0 c7"></div>
+      <div id="r0 c8"></div>
+      <div id="r0 c9"></div>
 
-    <div id="r6 c0"></div>
-    <div id="r6 c1"></div>
-    <div id="r6 c2"></div>
-    <div id="r6 c3"></div>
-    <div id="r6 c4"></div>
-    <div id="r6 c5"></div>
-    <div id="r6 c6"></div>
-    <div id="r6 c7"></div>
-    <div id="r6 c8"></div>
-    <div id="r6 c9"></div>
+      <div id="r1 c0"></div>
+      <div id="r1 c1"></div>
+      <div id="r1 c2"></div>
+      <div id="r1 c3"></div>
+      <div id="r1 c4"></div>
+      <div id="r1 c5"></div>
+      <div id="r1 c6"></div>
+      <div id="r1 c7"></div>
+      <div id="r1 c8"></div>
+      <div id="r1 c9"></div>
+
+      <div id="r2 c0"></div>
+      <div id="r2 c1"></div>
+      <div id="r2 c2"></div>
+      <div id="r2 c3"></div>
+      <div id="r2 c4"></div>
+      <div id="r2 c5"></div>
+      <div id="r2 c6"></div>
+      <div id="r2 c7"></div>
+      <div id="r2 c8"></div>
+      <div id="r2 c9"></div>
 
 
-    <div id="r7 c0"></div>
-    <div id="r7 c1"></div>
-    <div id="r7 c2"></div>
-    <div id="r7 c3"></div>
-    <div id="r7 c4"></div>
-    <div id="r7 c5"></div>
-    <div id="r7 c6"></div>
-    <div id="r7 c7"></div>
-    <div id="r7 c8"></div>
-    <div id="r7 c9"></div>
+      <div id="r3 c0"></div>
+      <div id="r3 c1"></div>
+      <div id="r3 c2"></div>
+      <div id="r3 c3"></div>
+      <div id="r3 c4"></div>
+      <div id="r3 c5"></div>
+      <div id="r3 c6"></div>
+      <div id="r3 c7"></div>
+      <div id="r3 c8"></div>
+      <div id="r3 c9"></div>
 
-    <div id="r8 c0"></div>
-    <div id="r8 c1"></div>
-    <div id="r8 c2"></div>
-    <div id="r8 c3"></div>
-    <div id="r8 c4"></div>
-    <div id="r8 c5"></div>
-    <div id="r8 c6"></div>
-    <div id="r8 c7"></div>
-    <div id="r8 c8"></div>
-    <div id="r8 c9"></div>
+      <div id="r4 c0"></div>
+      <div id="r4 c1"></div>
+      <div id="r4 c2"></div>
+      <div id="r4 c3"></div>
+      <div id="r4 c4"></div>
+      <div id="r4 c5"></div>
+      <div id="r4 c6"></div>
+      <div id="r4 c7"></div>
+      <div id="r4 c8"></div>
+      <div id="r4 c9"></div>
 
-    <div id="r9 c0"></div>
-    <div id="r9 c1"></div>
-    <div id="r9 c2"></div>
-    <div id="r9 c3"></div>
-    <div id="r9 c4"></div>
-    <div id="r9 c5"></div>
-    <div id="r9 c6"></div>
-    <div id="r9 c7"></div>
-    <div id="r9 c8"></div>
-    <div id="r9 c9"></div>
+      <div id="r5 c0"></div>
+      <div id="r5 c1"></div>
+      <div id="r5 c2"></div>
+      <div id="r5 c3"></div>
+      <div id="r5 c4"></div>
+      <div id="r5 c5"></div>
+      <div id="r5 c6"></div>
+      <div id="r5 c7"></div>
+      <div id="r5 c8"></div>
+      <div id="r5 c9"></div>
+
+      <div id="r6 c0"></div>
+      <div id="r6 c1"></div>
+      <div id="r6 c2"></div>
+      <div id="r6 c3"></div>
+      <div id="r6 c4"></div>
+      <div id="r6 c5"></div>
+      <div id="r6 c6"></div>
+      <div id="r6 c7"></div>
+      <div id="r6 c8"></div>
+      <div id="r6 c9"></div>
 
 
-  </section>
+      <div id="r7 c0"></div>
+      <div id="r7 c1"></div>
+      <div id="r7 c2"></div>
+      <div id="r7 c3"></div>
+      <div id="r7 c4"></div>
+      <div id="r7 c5"></div>
+      <div id="r7 c6"></div>
+      <div id="r7 c7"></div>
+      <div id="r7 c8"></div>
+      <div id="r7 c9"></div>
+
+      <div id="r8 c0"></div>
+      <div id="r8 c1"></div>
+      <div id="r8 c2"></div>
+      <div id="r8 c3"></div>
+      <div id="r8 c4"></div>
+      <div id="r8 c5"></div>
+      <div id="r8 c6"></div>
+      <div id="r8 c7"></div>
+      <div id="r8 c8"></div>
+      <div id="r8 c9"></div>
+
+      <div id="r9 c0"></div>
+      <div id="r9 c1"></div>
+      <div id="r9 c2"></div>
+      <div id="r9 c3"></div>
+      <div id="r9 c4"></div>
+      <div id="r9 c5"></div>
+      <div id="r9 c6"></div>
+      <div id="r9 c7"></div>
+      <div id="r9 c8"></div>
+      <div id="r9 c9"></div>
 
 
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-  -moz-user-select: none; /* Old versions of Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none; /* Non-prefixed version, currently
-  supported by Chrome, Edge, Opera and Firefox */
+    </section>
 
-</body>
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+    supported by Chrome, Edge, Opera and Firefox */
+
+  </body>
 
 </html>
