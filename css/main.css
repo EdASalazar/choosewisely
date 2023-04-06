@@ -29,7 +29,8 @@ h1 {
 
 #board {
   display: grid;
-  min-width: 60vh;
+  max-width: 1000px;
+  max-height: 1000px;
   grid-template-columns: repeat(10, 1fr);
   background-color: rgb(255, 255, 255);
   background-image: url("../images/knightsymbol.jpg");
@@ -40,11 +41,11 @@ h1 {
   font-size: 5vh;
 }
 
-#board>div {
-  max-height: 20vh;
-  max-width: 20vh;
-  min-height: 6vh;
-  min-width: 6vh;
+#board > div {
+  max-height: 40px;
+  max-width: 40px;
+  min-height: 10px;
+  min-width: 10px;
   display: flex;
   border: .2vh solid rgb(220, 218, 218);
   border-radius: 7%;
