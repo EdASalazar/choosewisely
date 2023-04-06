@@ -7,22 +7,22 @@ body {
   font-family: 'MedievalSharp', cursive;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   background-image: url("../images/ext with sky.webp");
   background-size: cover;
   background-blend-mode: hard-light;
   background-color: #ccc5c5;
-  color: rgba(0, 0, 0, 0)
+  color: rgba(0, 0, 0, 0);
+  height: 100vh;
+  width: 100vw;
 }
 
 h1 {
-  font-size: 7vh;
-  margin: 5vh 0vh 5vh;
+  font-size: 6.5vmax;
   color: rgb(238, 77, 77);
-  text-shadow: rgb(0, 0, 0) .75vh .5vh .5vh;
+  text-shadow: rgb(0, 0, 0) 1px 1px 1px;
   letter-spacing: .75vh;
-  
 }
 
 
@@ -38,7 +38,7 @@ h1 {
   background-repeat: no-repeat;
   background-size: fit;
   background-position: center center;
-  font-size: 5vh;
+  font-size: 4vmin;
 }
 
 #board > div {
@@ -69,7 +69,7 @@ h1 {
   background-image: url("../images/Sheep-stone.jpg");
   background-color: gray;
   color: rgb(55, 22, 5);
-  text-shadow: rgb(237, 224, 216) 2px 3px 3px;
+  text-shadow: rgb(237, 224, 216) 1px 1px 1px;
   text-align: center;
   background-size: cover;
 }
@@ -92,7 +92,7 @@ h1 {
 
 button {
   font-family: 'MedievalSharp', bold;
-  margin-left: 4vh;
+  margin-left: 4vw;
 }
 
 
@@ -112,15 +112,15 @@ nav {
 ul {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   width: 100%;
   margin: 0;
   padding: 0;
 }
 
 li {
-  font-size: 4vh;
-  margin: 0 4vh 0 4vh;
+  font-size: 5vmin;
+  margin: 0 4vmin 0 4vmin;
   color: rgb(238, 77, 77);
   text-shadow: rgb(0, 0, 0) .5px .5px;
   text-align: center;
