@@ -4,7 +4,7 @@ const BOARD_COLS = 10;
 const MINE_PCT = 20;
 const Game_Over_Sound = new Audio('../sounds/scream4.wav');
 const Game_Start = new Audio('../sounds/indiana-jones-theme-song.mp3')
-let Timer = 0;
+let sec = 0;
 
 /*----- app's state (variables) -----*/
 let game;
@@ -165,12 +165,12 @@ function init() {
       document.getElementById(`r${rowIdx} c${colIdx}`).classList.remove('revealed-mine');
       document.querySelector('button').style.visibility = "hidden";
       
-
+      
     }
   }
+  sec = 0;
   countMines();
   trapsEl.innerHTML = `: ${mineTotal}`;
-  
 }
 
 
@@ -196,12 +196,11 @@ initialize();
 function initialize() {
   game = new ChooseWiselyGame(boardEl, msgEl);
   game.play();
-
-  timer()
+  // timer()
 }
 
 function endGame() {
-  pause();
+  // pauseTimer();
   for (let rowIdx = 0; rowIdx < BOARD_ROWS; rowIdx++) {
     for (let colIdx = 0; colIdx < BOARD_COLS; colIdx++) {
       const cell = board[rowIdx][colIdx];
@@ -210,7 +209,7 @@ function endGame() {
       Game_Over_Sound.volume = .15;
       document.querySelector('button').style.visibility = "visible";
       document.getElementById('header').innerHTML = "You Chose Poorly!";
-      
+     
     }
   }
 }
@@ -247,21 +246,21 @@ function getWinner() {
         Game_Start.volume = .05;
         headedEl.innerHTML = "You Chose Wisely";
         document.querySelector('button').style.visibility = "visible";
+        // pauseTimer()
       }
     }
   }
 };
     /*----- icebox and other stuff...do not enter -----*/
 
-function timer(){
-  let sec = 0;
-  Timer = setInterval(() => {
-    timerEl.innerHTML = '00:' +sec;
-    sec ++;
-    console.log(Timer)
-  }, 1000)
-}
+// function timer(){
+//   sec = 0;
+//   setInterval(() => {
+//     timerEl.innerHTML = '00:' +sec;
+//     sec ++;
+//   }, 1000)
+// }
 
-function pause(){
-  clearInterval(timer);
-}
+// function pauseTimer(){
+//   clearInterval(timer);
+// }
